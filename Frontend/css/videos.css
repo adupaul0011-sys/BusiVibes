@@ -1,0 +1,68 @@
+.music-videos {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+}
+
+.music-videos h2 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.videos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.video-card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.video-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.video-card h3 {
+  color: #222;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.video-card p {
+  color: #555;
+  margin: 3px 0;
+}
+
+.watch-btn {
+  background-color: #6a006a;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.watch-btn:hover {
+  background-color: #4b004b;
+  transform: scale(1.05);
+}

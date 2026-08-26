@@ -1,0 +1,112 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 24px;
+  background-color: #6a006a;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 20px;
+  background-color: transparent;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+}
+
+.search-form {
+  display: flex;
+  flex: 0 1 260px;
+  min-width: 180px;
+  height: 38px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.search-form input {
+  width: 100%;
+  min-width: 0;
+  padding: 0 14px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+}
+
+.search-form input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.search-form button {
+  width: 42px;
+  flex-shrink: 0;
+  border: none;
+  background: #ffcc00;
+  color: #2d123d;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background: #ffaa00;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.login-btn,
+.signup-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-btn {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #ffcc00;
+}
+
+.login-btn:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+.signup-btn {
+  background: #ffcc00;
+  color: #000;
+}
+
+.signup-btn:hover {
+  background: #ffaa00;
+}

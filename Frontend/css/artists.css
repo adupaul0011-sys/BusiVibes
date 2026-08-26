@@ -1,0 +1,150 @@
+.featured-artists {
+  position: relative;
+  background: #050507;
+  color: white;
+  padding: 25px 4% 45px;
+  overflow: hidden;
+}
+
+.featured-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.featured-header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.view-all-artists {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a500ff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.view-all-artists span {
+  font-size: 30px;
+  line-height: 15px;
+}
+
+.view-all-artists:hover {
+  color: #c45cff;
+}
+
+.artists-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.artists-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  gap: 35px;
+  padding: 0 55px;
+  overflow: hidden;
+}
+
+.featured-artist {
+  flex: 0 0 170px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.featured-artist:hover {
+  transform: translateY(-5px);
+}
+
+.artist-circle {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  padding: 2px;
+  background: #2d2d32;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.artist-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+.featured-artist:hover .artist-circle {
+  transform: scale(1.04);
+  box-shadow: 0 0 25px rgba(140, 0, 255, 0.35);
+}
+
+.featured-artist h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 12px 0 4px;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #7b00ff;
+  color: white;
+  font-size: 11px;
+  font-weight: 900;
+  box-shadow: 0 0 8px rgba(123, 0, 255, 0.5);
+}
+
+.featured-artist p {
+  margin: 0;
+  color: #aaa8ad;
+  font-size: 15px;
+}
+
+.artist-arrow {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #9200ff;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 35px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.artist-arrow:hover {
+  background: #7b00ff;
+  border-color: #7b00ff;
+  box-shadow: 0 0 20px rgba(123, 0, 255, 0.5);
+}
+
+.artist-prev { left: 0; }
+.artist-next { right: 0; }

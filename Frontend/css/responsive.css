@@ -1,0 +1,115 @@
+.how-it-works {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 1000px;
+  background-color: #f5f5f5;
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.step {
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.step:hover { transform: translateY(-5px); }
+.step img { width: 60px; margin-bottom: 15px; }
+.step h3 { color: #ffcc00; margin-bottom: 10px; }
+.step p { font-size: 1rem; color: #ddd; }
+
+@media (max-width: 1100px) {
+  .artists-container { gap: 25px; }
+  .featured-artist { flex-basis: 145px; }
+  .artist-circle { width: 145px; height: 145px; }
+}
+
+@media (max-width: 900px) {
+  .navbar { flex-wrap: wrap; justify-content: center; }
+  .search-form { order: 2; flex: 1 1 240px; }
+  .auth-buttons { order: 4; }
+  nav ul { flex: 1 1 100%; justify-content: center; order: 3; }
+  .hero { min-height: 560px; padding: 60px 6%; }
+  .hero-content { width: 60%; }
+  .hero-image { width: 48vw; right: -3%; }
+  .hero h1 { font-size: clamp(42px, 7vw, 65px); }
+}
+
+@media (max-width: 768px) {
+  .featured-artists { padding: 25px 20px 40px; }
+  .featured-header h2 { font-size: 24px; }
+  .artists-container { flex-direction: row; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; }
+  .artists-container::-webkit-scrollbar { display: none; }
+  .songs-container, .videos-container { flex-direction: column; align-items: center; }
+  .song-card, .video-card { width: 90%; max-width: 350px; }
+  .how-it-works .steps { flex-direction: column; align-items: center; }
+  .profile-section { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 700px) {
+  .featured-artists { padding: 25px 20px 40px; }
+  .featured-artist { flex-basis: 125px; }
+  .artist-circle { width: 125px; height: 125px; }
+  .featured-artist h3 { font-size: 14px; }
+  .featured-artist p { font-size: 13px; }
+  .verified-badge { width: 16px; height: 16px; font-size: 9px; }
+  .artist-arrow { width: 38px; height: 38px; font-size: 27px; }
+  .hero { min-height: auto; padding: 55px 25px 0; flex-direction: column; align-items: center; text-align: center; }
+  .hero-content { width: 100%; max-width: 500px; }
+  .hero h1 { font-size: 48px; letter-spacing: -2px; }
+  .hero-description { font-size: 14px; line-height: 1.6; margin-left: auto; margin-right: auto; }
+  .hero-stats { justify-content: center; gap: 25px; }
+  .hero-buttons, .social-links { justify-content: center; }
+  .social-links { padding-bottom: 25px; }
+  .hero-image { position: relative; right: auto; bottom: auto; width: 90%; margin-top: 25px; }
+  .hero-image img { max-height: 420px; }
+  .hero-glow { width: 350px; height: 350px; right: 50%; top: 65%; transform: translate(50%, -50%); }
+}
+
+@media (max-width: 600px) {
+  .featured-header h2 { font-size: 24px; }
+  .view-all-artists { font-size: 14px; }
+  .artists-container { gap: 25px; padding: 0 35px; }
+  .popular-songs { padding: 45px 20px; }
+  .how-it-works { margin: 45px auto; }
+}
+
+@media (max-width: 480px) {
+  .how-it-works h2 { font-size: 1.5rem; }
+  .step h3 { font-size: 1.1rem; }
+  .step p { font-size: 0.9rem; }
+  .step img { width: 50px; }
+}
+
+@media (max-width: 450px) {
+  .featured-header { margin-bottom: 20px; }
+  .featured-header h2 { font-size: 21px; }
+  .featured-artist { flex-basis: 110px; }
+  .artist-circle { width: 110px; height: 110px; }
+  .artist-arrow { width: 34px; height: 34px; font-size: 24px; }
+}
+
+@media (max-width: 400px) {
+  .hero { padding-left: 18px; padding-right: 18px; }
+  .hero h1 { font-size: 40px; }
+  .hero-stats { gap: 18px; }
+  .hero-stats strong { font-size: 17px; }
+  .hero-buttons { flex-direction: column; width: 100%; }
+  .btn { width: 100%; }
+  .social-links { gap: 14px; }
+}
