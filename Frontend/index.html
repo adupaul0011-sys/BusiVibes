@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>BusiVibes</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <nav class="navbar">
+  <div class="logo">BusiVibes</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Discover</a></li>
+    <li><a href="#">Top Songs</a></li>
+    <li><a href="#">Videos</a></li>
+    <li><a href="#">Artists</a></li>
+    <li><a href="#">Events</a></li>
+    <li><a href="#">Merch</a></li>
+  </ul>
+    <form class="search-form" role="search">
+        <label class="sr-only" for="site-search">Search BusiVibes</label>
+        <input id="site-search" type="search" placeholder="Search artists, songs, videos" autocomplete="off">
+        <button type="submit" aria-label="Search">⌕</button>
+    </form>
+  <div class="auth-buttons">
+    <button class="login-btn">Log In</button>
+    <button class="signup-btn">Sign Up</button>
+  </div>
+
+</nav>
+
+<section class="hero">
+
+    <!-- Background glow -->
+    <div class="hero-glow"></div>
+
+    <!-- Artist Image -->
+    <div class="hero-image">
+        <img src="assets/paul-beats.png" alt="Paul Beats">
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+
+        <span class="artist-label">ARTIST</span>
+
+        <h1>
+            Paul Beats
+            <span class="verified">✓</span>
+        </h1>
+
+        <p class="genre">Afropop • Ghana</p>
+
+        <p class="hero-description">
+            Feel the rhythm. Experience the sound.
+            Discover the latest music from Paul Beats.
+        </p>
+
+        <div class="hero-stats">
+            <div>
+                <strong>22K</strong>
+                <span>Followers</span>
+            </div>
+
+            <div>
+                <strong>1.2M</strong>
+                <span>Streams</span>
+            </div>
+
+            <div>
+                <strong>400K</strong>
+                <span>Downloads</span>
+            </div>
+        </div>
+
+        <div class="hero-buttons">
+            <a href="#songs" class="btn primary-btn">
+                ▶ Play Music
+            </a>
+
+            <button class="btn follow-btn">
+                + Follow
+            </button>
+        </div>
+
+        <div class="social-links">
+            <a href="#" aria-label="Instagram">
+                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.5" cy="6.5" r="1"></circle>
+                </svg>
+                <span class="sr-only">Instagram</span>
+            </a>
+            <a href="#" aria-label="TikTok">
+                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M15 4v10.25a4.25 4.25 0 1 1-3-4.07v3.08a1.5 1.5 0 1 0 1.5 1.42V4H15Z"></path>
+                    <path d="M15 4c.35 1.7 1.35 2.75 3 3v2c-1.15-.08-2.15-.43-3-1.05V4Z"></path>
+                </svg>
+                <span class="sr-only">TikTok</span>
+            </a>
+            <a href="#" aria-label="YouTube">
+                <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <rect x="2.5" y="5" width="19" height="14" rx="4"></rect>
+                    <path class="social-icon-fill" d="m10 9 5 3-5 3V9Z"></path>
+                </svg>
+                <span class="sr-only">YouTube</span>
+            </a>
+        </div>
+
+    </div>
+
+</section>
+<!-- FEATURED ARTISTS -->
+
+<section id="featured-artists" class="featured-artists">
+    <div class="featured-header">
+        <h2>Featured Artists</h2>
+        <a href="#" class="view-all-artists">View All <span>›</span></a>
+    </div>
+
+    <div class="artists-slider">
+        <button class="artist-arrow artist-prev" type="button" aria-label="Previous artists">‹</button>
+
+        <div class="artists-container">
+            <div class="featured-artist">
+                <div class="artist-circle">
+                    <img src="assets/images/artists1.jpg" alt="Paul Beats">
+                </div>
+                <h3>Paul Beats <span class="verified-badge">✓</span></h3>
+                <p>Afropop Artist</p>
+            </div>
+
+            <div class="featured-artist">
+                <div class="artist-circle">
+                    <img src="assets/images/artists2.jpg" alt="Decartella">
+                </div>
+                <h3>Melody Queen <span class="verified-badge">✓</span></h3>
+                <p>Vocalist</p>
+            </div>
+
+            <div class="featured-artist">
+                <div class="artist-circle">
+                    <img src="assets/images/artists3.jpg" alt="Kofi Jamar">
+                </div>
+                <h3>Jay Nation  <span class="verified-badge">✓</span></h3>
+                <p>Afrobeats Artist</p>
+            </div>
+
+            <div class="featured-artist">
+                <div class="artist-circle">
+                    <img src="assets/images/artists4.jpg" alt="Lyrical Kings">
+                </div>
+                <h3>Lyrical Kings <span class="verified-badge">✓</span></h3>
+                <p>Group</p>
+            </div>
+
+            <div class="featured-artist">
+                <div class="artist-circle">
+                    <img src="assets/images/artists5.jpg" alt="Amaarae">
+                </div>
+                <h3>Amaarae <span class="verified-badge">✓</span></h3>
+                <p>Afropop Artist</p>
+            </div>
+
+            <div class="featured-artist">
+                <div class="artist-circle">
+                    <img src="assets/images/artists6.jpg" alt="Black Tunez">
+                </div>
+                <h3>Black Tunez <span class="verified-badge">✓</span></h3>
+                <p>Producer</p>
+            </div>
+        </div>
+
+        <button class="artist-arrow artist-next" type="button" aria-label="Next artists">›</button>
+    </div>
+</section>
+
+<!-- POPULAR SONGS -->
+
+<section id="popular-songs" class="popular-songs">
+
+    <h2>🔥 Popular Songs</h2>
+
+    <div class="songs-container">
+
+        <!-- SONG 1 -->
+
+        <div class="song-card">
+
+            <img src="assets/song-cover/champion.png"
+            alt="Champion Song Cover">
+
+            <h3>Champion</h3>
+
+            <p>Paul Beats • Afropop</p>
+
+            <p>Duration: 3:45</p>
+
+            <p>Streams: 2.1M</p>
+
+            <button class="play-btn">
+                Play Song
+            </button>
+
+            <button class="download-btn">
+                Download
+            </button>
+
+        </div>
+
+
+        <!-- SONG 2 -->
+
+        <div class="song-card">
+
+            <img src="assets/song-cover/Rise Up.png"
+            alt="Rise Up Song Cover">
+
+            <h3>Rise Up</h3>
+
+            <p>Paul Beats • Afropop</p>
+
+            <p>Duration: 4:01</p>
+
+            <p>Streams: 1.4M</p>
+
+            <button class="play-btn">
+                Play Song
+            </button>
+
+            <button class="download-btn">
+                Download
+            </button>
+
+        </div>
+
+
+        <!-- SONG 3 -->
+
+        <div class="song-card">
+
+            <img src="assets/song-cover/Dream Big.png"
+            alt="Dream Big Song Cover">
+
+            <h3>Dream Big</h3>
+
+            <p>Paul Beats • Afropop</p>
+
+            <p>Duration: 2:58</p>
+
+            <p>Streams: 900K</p>
+
+            <button class="play-btn">
+                Play Song
+            </button>
+
+            <button class="download-btn">
+                Download
+            </button>
+
+        </div>
+
+
+        <!-- SONG 4 -->
+
+        <div class="song-card">
+
+            <img src="assets/song-cover/Forever.png"
+            alt="Forever Song Cover">
+
+            <h3>Forever</h3>
+
+            <p>Paul Beats • Afropop</p>
+
+            <p>Duration: 3:30</p>
+
+            <p>Streams: 500K</p>
+
+            <button class="play-btn">
+                Play Song
+            </button>
+
+            <button class="download-btn">
+                Download
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MUSIC VIDEOS -->
+
+<section id="music-videos" class="music-videos">
+
+    <h2>🎬 Music Videos</h2>
+
+    <div class="videos-container">
+
+        <!-- VIDEO 1 -->
+
+        <div class="video-card">
+
+            <img src="assets/video-thumbnails/Champion.png"
+            alt="Champion Music Video">
+
+            <h3>Champion</h3>
+
+            <p>Paul Beats • Afropop</p>
+
+            <p>Views: 850K</p>
+
+            <button class="watch-btn" onclick="playVideo('assets/music-videos/Champion.mp4')">
+  Watch Video
+</button>
+
+
+        </div>
+
+
+        <!-- VIDEO 2 -->
+
+        <div class="video-card">
+
+            <img src="assets/video-thumbnails/Rise Up.png"
+            alt="Rise Up Music Video">
+
+            <h3>Rise Up</h3>
+
+            <p>Paul Beats • Afropop</p>
+
+            <p>Views: 620K</p>
+
+            <button class="watch-btn" onclick="playVideo('assets/music-videos/Rise Up.mp4')">
+  Watch Video
+</button>
+
+
+        </div>
+
+
+        <!-- VIDEO 3 -->
+
+        <div class="video-card">
+
+            <img src="assets/video-thumbnails/Dream Big.png"
+            alt="Dream Big Music Video">
+
+            <h3>Dream Big</h3>
+
+            <p>Paul Beats • Afropop</p>
+
+            <p>Views: 430K</p>
+
+            <button class="watch-btn" onclick="playVideo('assets/music-videos/Dream Big.mp4')">
+  Watch Video
+</button>
+
+
+        </div>
+
+        <div class="video-card">
+
+            <img src="assets/video-thumbnails/Forever.png"
+            alt="Forever Music Video">
+
+            <h3>Forever</h3>
+
+            <p>Paul Beats • Afropop</p>
+
+            <p>Views: 300K</p>
+<button class="watch-btn" onclick="playVideo('assets/music-videos/Forever.mp4')">
+  Watch Video
+</button>
+
+
+        </div>
+
+    </div>
+
+    <section class="how-it-works">
+  <h2>🎧 How BusiVibes Works</h2>
+  <div class="steps">
+
+    <div class="step">
+      <h3>1. Create Your Profile</h3>
+      <p>Set up your artist page with bio, songs, albums, and social links.</p>
+    </div>
+
+    <div class="step">
+      <h3>2. Upload Your Music</h3>
+      <p>Share songs, albums, and videos with fans worldwide.</p>
+    </div>
+
+    <div class="step">
+      <h3>3. Connect & Grow</h3>
+      <p>Engage fans, track analytics, and monetize your art.</p>
+    </div>
+
+  </div>
+</section>
+
+</body>
+<script src="script.js"></script>
+
+</html>
