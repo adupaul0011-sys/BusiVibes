@@ -190,111 +190,67 @@
 
 <section id="popular-songs" class="popular-songs">
 
-    <h2>🔥 Popular Songs</h2>
+    <div class="section-header">
+        <h2>Top Songs</h2>
+        <a href="#" class="view-all">View All →</a>
+    </div>
 
     <div class="songs-container">
 
         <!-- SONG 1 -->
-
         <div class="song-card">
-
-            <img src="assets/song-cover/champion.png"
-            alt="Champion Song Cover">
-
-            <h3>Champion</h3>
-
-            <p>Paul Beats • Afropop</p>
-
-            <p>Duration: 3:45</p>
-
-            <p>Streams: 2.1M</p>
-
-            <button class="play-btn">
-                Play Song
+            <img src="assets/song-cover/champion.png" alt="Champion">
+            <div class="song-info">
+                <h3>Champion</h3>
+                <p>Paul Beats • Afropop</p>
+                <p class="song-streams">2.1M Streams</p>
+            </div>
+                <button class="song-play-btn" type="button" aria-label="Play Champion"
+                    data-audio="assets/audio-files/Champion.mp3">
+                ▶
             </button>
-
-            <button class="download-btn">
-                Download
-            </button>
-
         </div>
-
 
         <!-- SONG 2 -->
-
         <div class="song-card">
-
-            <img src="assets/song-cover/Rise Up.png"
-            alt="Rise Up Song Cover">
-
-            <h3>Rise Up</h3>
-
-            <p>Paul Beats • Afropop</p>
-
-            <p>Duration: 4:01</p>
-
-            <p>Streams: 1.4M</p>
-
-            <button class="play-btn">
-                Play Song
+            <img src="assets/song-cover/Rise Up.png" alt="Rise Up">
+            <div class="song-info">
+                <h3>Rise Up</h3>
+                <p>Paul Beats • Afropop</p>
+                <p class="song-streams">1.4M Streams</p>
+            </div>
+                <button class="song-play-btn" type="button" aria-label="Play Rise Up"
+                    data-audio="assets/audio-files/Rise Up.mp3">
+                ▶
             </button>
-
-            <button class="download-btn">
-                Download
-            </button>
-
         </div>
-
 
         <!-- SONG 3 -->
-
         <div class="song-card">
-
-            <img src="assets/song-cover/Dream Big.png"
-            alt="Dream Big Song Cover">
-
-            <h3>Dream Big</h3>
-
-            <p>Paul Beats • Afropop</p>
-
-            <p>Duration: 2:58</p>
-
-            <p>Streams: 900K</p>
-
-            <button class="play-btn">
-                Play Song
+            <img src="assets/song-cover/Dream Big.png" alt="Dream Big">
+            <div class="song-info">
+                <h3>Dream Big</h3>
+                <p>Paul Beats • Afropop</p>
+                <p class="song-streams">900K Streams</p>
+            </div>
+                <button class="song-play-btn" type="button" aria-label="Play Dream Big"
+                    data-audio="assets/audio-files/Dream Big.mp3">
+                ▶
             </button>
-
-            <button class="download-btn">
-                Download
-            </button>
-
         </div>
 
-
         <!-- SONG 4 -->
-
         <div class="song-card">
-
-            <img src="assets/song-cover/Forever.png"
-            alt="Forever Song Cover">
-
-            <h3>Forever</h3>
-
-            <p>Paul Beats • Afropop</p>
-
-            <p>Duration: 3:30</p>
-
-            <p>Streams: 500K</p>
-
-            <button class="play-btn">
-                Play Song
+            <img src="assets/song-cover/Forever.png" alt="Forever">
+            <div class="song-info">
+                <h3>Forever</h3>
+                <p>Paul Beats ft. Decartella</p>
+                <p class="song-streams">500K Streams</p>
+            </div>
+                <button class="song-play-btn" type="button" aria-label="Play Forever"
+                    data-audio="assets/audio-files/Forever.mp3">
+                ▶
             </button>
-
-            <button class="download-btn">
-                Download
-            </button>
-
         </div>
 
     </div>
@@ -305,7 +261,7 @@
 
 <section id="music-videos" class="music-videos">
 
-    <h2>🎬 Music Videos</h2>
+    <h2>Latest Music Videos</h2>
 
     <div class="videos-container">
 
@@ -313,18 +269,15 @@
 
         <div class="video-card">
 
-            <img src="assets/video-thumbnails/Champion.png"
-            alt="Champion Music Video">
-
-            <h3>Champion</h3>
-
-            <p>Paul Beats • Afropop</p>
-
-            <p>Views: 850K</p>
-
-            <button class="watch-btn" onclick="playVideo('assets/music-videos/Champion.mp4')">
-  Watch Video
-</button>
+            <video class="video-preview" src="assets/music-videos/Champion.mp4" muted loop autoplay playsinline aria-label="Champion Music Video"></video>
+            <div class="video-info">
+                <h3>Champion</h3>
+                <p>Paul Beats • Afropop</p>
+            </div>
+            <button class="video-play-btn" type="button" aria-label="Watch Champion"
+                    data-video="assets/music-videos/Champion.mp4">
+                ▶
+            </button>
 
 
         </div>
@@ -334,18 +287,15 @@
 
         <div class="video-card">
 
-            <img src="assets/video-thumbnails/Rise Up.png"
-            alt="Rise Up Music Video">
-
-            <h3>Rise Up</h3>
-
-            <p>Paul Beats • Afropop</p>
-
-            <p>Views: 620K</p>
-
-            <button class="watch-btn" onclick="playVideo('assets/music-videos/Rise Up.mp4')">
-  Watch Video
-</button>
+            <video class="video-preview" src="assets/music-videos/Rise Up.mp4" muted loop autoplay playsinline aria-label="Rise Up Music Video"></video>
+            <div class="video-info">
+                <h3>Rise Up</h3>
+                <p>Paul Beats • Afropop</p>
+            </div>
+            <button class="video-play-btn" type="button" aria-label="Watch Rise Up"
+                    data-video="assets/music-videos/Rise Up.mp4">
+                ▶
+            </button>
 
 
         </div>
@@ -355,35 +305,30 @@
 
         <div class="video-card">
 
-            <img src="assets/video-thumbnails/Dream Big.png"
-            alt="Dream Big Music Video">
-
-            <h3>Dream Big</h3>
-
-            <p>Paul Beats • Afropop</p>
-
-            <p>Views: 430K</p>
-
-            <button class="watch-btn" onclick="playVideo('assets/music-videos/Dream Big.mp4')">
-  Watch Video
-</button>
+            <video class="video-preview" src="assets/music-videos/Dream Big.mp4" muted loop autoplay playsinline aria-label="Dream Big Music Video"></video>
+            <div class="video-info">
+                <h3>Dream Big</h3>
+                <p>Paul Beats • Afropop</p>
+            </div>
+            <button class="video-play-btn" type="button" aria-label="Watch Dream Big"
+                    data-video="assets/music-videos/Dream Big.mp4">
+                ▶
+            </button>
 
 
         </div>
 
         <div class="video-card">
 
-            <img src="assets/video-thumbnails/Forever.png"
-            alt="Forever Music Video">
-
-            <h3>Forever</h3>
-
-            <p>Paul Beats • Afropop</p>
-
-            <p>Views: 300K</p>
-<button class="watch-btn" onclick="playVideo('assets/music-videos/Forever.mp4')">
-  Watch Video
-</button>
+                        <video class="video-preview" src="assets/music-videos/Forever.mp4" muted loop autoplay playsinline aria-label="Forever Music Video"></video>
+                        <div class="video-info">
+                                <h3>Forever</h3>
+                                <p>Paul Beats • Afropop</p>
+                        </div>
+                        <button class="video-play-btn" type="button" aria-label="Watch Forever"
+                                        data-video="assets/music-videos/Forever.mp4">
+                                ▶
+                        </button>
 
 
         </div>
@@ -412,7 +357,62 @@
   </div>
 </section>
 
+<footer class="busivibes-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h2><span>♫</span>&nbsp; BusiVibes</h2>
+            <p>The home of independent artists.<br>Stream, download, and feel the vibes.</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="Twitter">X</a>
+                <a href="#" aria-label="TikTok">♪</a>
+                <a href="#" aria-label="YouTube">▶</a>
+                <a href="#" aria-label="Facebook">f</a>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Explore</h3>
+            <a href="#">Discover</a>
+            <a href="#popular-songs">Top Songs</a>
+            <a href="#music-videos">Videos</a>
+            <a href="#featured-artists">Artists</a>
+            <a href="#">Albums</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Company</h3>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+            <a href="#">Press</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Support</h3>
+            <a href="#">Help Center</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Copyright</a>
+            <a href="#">DMCA</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Get the App</h3>
+            <a href="#" class="app-button">▶ &nbsp; Google Play</a>
+            <a href="#" class="app-button">Apple &nbsp; App Store</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">© 2025 BusiVibes. All Rights Reserved.</div>
+</footer>
+
 </body>
-<script type="module" src="js/main.js"></script>
+<script src="js/player.js"></script>
+<script src="js/search.js"></script>
+<script src="js/artists.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/main.js"></script>
 
 </html>

@@ -1,4 +1,4 @@
-export function initializeDashboard() {
+function initializeDashboard() {
   const dashboard = document.querySelector('.artist-dashboard');
 
   if (!dashboard) {

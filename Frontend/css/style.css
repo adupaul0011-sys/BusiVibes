@@ -5,6 +5,7 @@
 @import url("./videos.css");
 @import url("./player.css");
 @import url("./dashboard.css");
+@import url("./footer.css");
 @import url("./responsive.css");
 
 * {
@@ -13,9 +14,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  min-width: 320px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 50% 15%, rgba(108, 26, 180, 0.08), transparent 35%),
+    #08090b;
 }
 
 .sr-only {
@@ -29,4 +38,363 @@ body {
   white-space: nowrap;
   border: 0;
 }
+/* =========================================================
+   BUSIVIBES — NAVBAR
+   ========================================================= */
 
+.navbar {
+    width: 100%;
+    min-height: 68px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 28px;
+
+    box-sizing: border-box;
+
+    background: #050506;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    position: relative;
+    z-index: 1000;
+}
+
+
+/* ---------- LOGO ---------- */
+
+.navbar .logo {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    margin-right: 48px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.navbar .logo::before {
+    content: "♫";
+
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    margin-right: 9px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #8a20ff,
+        #b52cff
+    );
+
+    color: #ffffff;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* ---------- NAV LINKS ---------- */
+
+.nav-links {
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.nav-links li {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+
+    color: #d7d7db;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ffffff;
+}
+
+.nav-links a.active::after,
+.nav-links li:first-child a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 2px;
+
+    background: #9b25ff;
+
+    border-radius: 2px 2px 0 0;
+}
+
+
+/* ---------- SEARCH ---------- */
+
+.search-form {
+    width: 160px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+    margin-right: 14px;
+
+    border: 1px solid #28282f;
+    border-radius: 9px;
+
+    background: #101014;
+
+    overflow: hidden;
+}
+
+.search-form input {
+    width: 100%;
+    height: 100%;
+
+    padding: 0 10px;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 11px;
+}
+
+.search-form input::placeholder {
+    color: #77777f;
+}
+
+.search-form button {
+    width: 34px;
+    height: 34px;
+
+    flex: 0 0 34px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #c1c1c8;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    color: #a537ff;
+}
+
+
+/* ---------- AUTH BUTTONS ---------- */
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-btn,
+.signup-btn {
+    height: 32px;
+
+    padding: 0 14px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.login-btn {
+    border: 1px solid #303038;
+
+    background: transparent;
+
+    color: #e5e5e8;
+}
+
+.login-btn:hover {
+    border-color: #7d25d5;
+    color: #ffffff;
+}
+
+.signup-btn {
+    border: 1px solid #8b20ff;
+
+    background: linear-gradient(
+        135deg,
+        #7d20e8,
+        #a329ff
+    );
+
+    color: #ffffff;
+}
+
+.signup-btn:hover {
+    transform: translateY(-1px);
+
+    background: linear-gradient(
+        135deg,
+        #8f2aff,
+        #b33cff
+    );
+}
+
+
+/* =========================================================
+   NAVBAR + FOOTER MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 18px;
+    }
+
+    .navbar .logo {
+        margin-right: 20px;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .search-form {
+        width: 130px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        min-height: auto;
+
+        flex-wrap: wrap;
+
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .navbar .logo {
+        margin-right: auto;
+    }
+
+    .nav-links {
+        order: 3;
+
+        width: 100%;
+        height: 42px;
+
+        justify-content: space-between;
+
+        gap: 10px;
+
+        overflow-x: auto;
+    }
+
+    .nav-links a {
+        height: 42px;
+
+        white-space: nowrap;
+
+        font-size: 11px;
+    }
+
+    .search-form {
+        width: 150px;
+
+        margin: 0;
+    }
+
+    .auth-buttons {
+        gap: 6px;
+    }
+
+    .login-btn,
+    .signup-btn {
+        padding: 0 10px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .navbar .logo {
+        font-size: 18px;
+    }
+
+    .navbar .logo::before {
+        width: 28px;
+        height: 28px;
+    }
+
+    .search-form {
+        order: 4;
+
+        width: 100%;
+    }
+
+    .auth-buttons {
+        margin-left: auto;
+    }
+
+}

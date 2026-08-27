@@ -1,4 +1,4 @@
-export function initializeArtistSlider() {
+function initializeArtistSlider() {
   const artistsContainer = document.querySelector('.artists-container');
   const previousArtistButton = document.querySelector('.artist-prev');
   const nextArtistButton = document.querySelector('.artist-next');

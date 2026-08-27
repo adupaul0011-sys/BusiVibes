@@ -1,0 +1,133 @@
+.busivibes-footer {
+  padding: 55px 5% 20px;
+  background: #050507;
+  color: #fff;
+  border-top: 1px solid #292b32;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand h2 {
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: 24px;
+}
+
+.footer-brand h2 span {
+  color: #a537ff;
+}
+
+.footer-brand p {
+  max-width: 250px;
+  margin: 0 0 22px;
+  color: #a9a9af;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-socials a {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #3d2a4b;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-socials a:hover {
+  background: #7d1ed8;
+  border-color: #a537ff;
+  transform: translateY(-2px);
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.footer-column h3 {
+  margin: 0 0 6px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.footer-column a {
+  color: #a9a9af;
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #c06aff;
+}
+
+.footer-column .app-button {
+  width: 130px;
+  padding: 9px 10px;
+  border: 1px solid #3d2a4b;
+  border-radius: 6px;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-column .app-button:hover {
+  background: #24152f;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 45px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid #292b32;
+  color: #777782;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .busivibes-footer {
+    padding: 40px 20px 18px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-column .app-button {
+    width: 120px;
+  }
+}

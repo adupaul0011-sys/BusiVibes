@@ -1,4 +1,4 @@
-export function initializeSearch() {
+function initializeSearch() {
   const searchForm = document.querySelector('.search-form');
   const searchInput = document.querySelector('#site-search');
   const searchableItems = document.querySelectorAll('.featured-artist, .song-card, .video-card');

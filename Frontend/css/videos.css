@@ -1,68 +1,120 @@
+/* =========================
+   MUSIC VIDEOS SECTION
+========================= */
+
 .music-videos {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: #f5f5f5;
+  background: #17101f;
+  color: white;
+  padding: 70px 5%;
 }
 
 .music-videos h2 {
-  font-size: 2rem;
-  color: #222;
+  font-size: 26px;
   margin-bottom: 30px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .videos-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
 .video-card {
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 250px;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+  background: #24152f;
+  border: 1px solid #3d2a4b;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
 }
 
 .video-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  border-color: #8f00ff;
+  box-shadow: 0 8px 20px rgba(143, 0, 255, 0.25);
 }
 
-.video-card img {
+.video-card > .video-preview {
+  display: block;
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  height: 180px;
+  object-fit: cover;
+  background: #111116;
 }
 
-.video-card h3 {
-  color: #222;
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+.video-info {
+  min-width: 0;
+  padding: 16px 16px 0;
 }
 
-.video-card p {
-  color: #555;
-  margin: 3px 0;
-}
-
-.watch-btn {
-  background-color: #6a006a;
+.video-info h3 {
+  margin: 0 0 7px;
   color: white;
-  border: none;
-  padding: 10px 15px;
-  margin-top: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.watch-btn:hover {
-  background-color: #4b004b;
-  transform: scale(1.05);
+.video-info p {
+  margin: 0;
+  color: #b9adbf;
+  font-size: 13px;
+}
+
+.video-play-btn {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  background: rgba(22, 21, 22, 0.9);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.video-play-btn:hover {
+  background: #8f00ff;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+@media (max-width: 1000px) {
+  .videos-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .music-videos {
+    padding: 45px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .videos-container {
+    grid-template-columns: 1fr;
+  }
+
+  .video-card {
+    min-height: 280px;
+  }
+
+  .video-card > .video-preview {
+    height: 190px;
+  }
 }
