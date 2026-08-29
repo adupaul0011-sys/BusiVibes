@@ -1,0 +1,238 @@
+:root {
+  --bg-dark: #0d0d0d;
+  --bg-soft: #1b1b1b;
+  --panel: #171717;
+  --card: #ffffff;
+  --text: #f7f7f7;
+  --muted: #d3d3d3;
+  --gold: #ffcc00;
+  --purple: #7a1fff;
+  --purple-dark: #5b12b1;
+  --success: #2bb673;
+  --danger: #ff5d5d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #090909 0%, #1d1d1d 100%);
+  color: var(--text);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.auth-shell {
+  width: min(100%, 960px);
+  min-height: 620px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: rgba(26, 26, 26, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.auth-panel {
+  padding: 48px 38px;
+}
+
+.auth-panel--brand {
+  background: linear-gradient(135deg, rgba(122, 31, 255, 0.9), rgba(34, 34, 34, 0.9));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-badge {
+  width: fit-content;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.auth-panel--brand h1 {
+  margin: 22px 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+.auth-panel--brand p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+  color: #f0f0f0;
+}
+
+.feature-list li::before {
+  content: "✓";
+  color: var(--gold);
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+.auth-panel--form {
+  background: #111111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.toggle-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #202020;
+  border-radius: 12px;
+  padding: 6px;
+  margin-bottom: 28px;
+}
+
+.toggle-btn {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.toggle-btn.is-active {
+  background: var(--gold);
+  color: #111;
+}
+
+.auth-form {
+  display: none;
+}
+
+.auth-form.is-visible {
+  display: block;
+}
+
+.auth-form h2 {
+  margin: 0 0 24px;
+  font-size: 2rem;
+}
+
+.auth-form label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.auth-form input:focus {
+  outline: 2px solid rgba(255, 204, 0, 0.6);
+  border-color: transparent;
+}
+
+.row-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 22px;
+}
+
+.remember-me {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.remember-me input {
+  width: auto;
+}
+
+.row-inline a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.primary-btn {
+  width: 100%;
+  border: none;
+  background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+  color: white;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
+.form-message {
+  min-height: 24px;
+  margin-top: 18px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.form-message.error {
+  color: var(--danger);
+}
+
+.form-message.success {
+  color: var(--success);
+}
+
+@media (max-width: 760px) {
+  .auth-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-panel {
+    padding: 28px 20px;
+  }
+
+  .auth-panel--brand {
+    min-height: 220px;
+  }
+}

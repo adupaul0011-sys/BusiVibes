@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BusiVibes | Login</title>
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body>
+    <main class="auth-page">
+      <div class="auth-shell" id="authShell">
+        <div class="auth-panel auth-panel--brand">
+          <div class="brand-badge">BusiVibes</div>
+          <h1>Discover. Upload. Grow.</h1>
+          <p>
+            Join independent artists and fans in one vibrant music community.
+          </p>
+          <ul class="feature-list">
+            <li>Stream trending music</li>
+            <li>Support emerging artists</li>
+            <li>Manage your artist profile</li>
+          </ul>
+        </div>
+
+        <div class="auth-panel auth-panel--form">
+          <div class="toggle-row" aria-label="Authentication mode">
+            <button class="toggle-btn is-active" type="button" data-mode="login">
+              Login
+            </button>
+            <button class="toggle-btn" type="button" data-mode="signup">
+              Sign Up
+            </button>
+          </div>
+
+          <form id="loginForm" class="auth-form is-visible" novalidate>
+            <h2>Welcome back</h2>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="name@example.com" required />
+            </label>
+            <label>
+              <span>Password</span>
+              <input type="password" name="password" placeholder="Enter your password" required />
+            </label>
+            <div class="row-inline">
+              <label class="remember-me">
+                <input type="checkbox" name="remember" />
+                <span>Remember me</span>
+              </label>
+              <a href="#">Forgot password?</a>
+            </div>
+            <button type="submit" class="primary-btn">Log In</button>
+          </form>
+
+          <form id="signupForm" class="auth-form" novalidate>
+            <h2>Create account</h2>
+            <label>
+              <span>Full Name</span>
+              <input type="text" name="fullName" placeholder="Your full name" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" placeholder="name@example.com" required />
+            </label>
+            <label>
+              <span>Password</span>
+              <input type="password" name="password" placeholder="Create a password" required />
+            </label>
+            <label>
+              <span>Confirm Password</span>
+              <input type="password" name="confirmPassword" placeholder="Repeat your password" required />
+            </label>
+            <button type="submit" class="primary-btn">Create Account</button>
+          </form>
+
+          <p id="formMessage" class="form-message" aria-live="polite"></p>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+  </body>
+</html>
