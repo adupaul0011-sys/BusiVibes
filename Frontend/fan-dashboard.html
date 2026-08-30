@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Fan Dashboard | BusiVibes</title>
+
+    <link rel="stylesheet"
+        href="css/dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- ===============================
+         FAN DASHBOARD
+    ================================ -->
+
+    <div class="dashboard-container">
+
+        <!-- ===============================
+             SIDEBAR
+        ================================ -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <h2>BusiVibes</h2>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="#" class="nav-link active">
+                    🏠 Dashboard
+                </a>
+
+                <a href="#" class="nav-link">
+                    🎵 Discover Music
+                </a>
+
+                <a href="#" class="nav-link">
+                    ❤️ Liked Songs
+                </a>
+
+                <a href="#" class="nav-link">
+                    📥 Downloads
+                </a>
+
+                <a href="#" class="nav-link">
+                    👥 Following Artists
+                </a>
+
+                <a href="#" class="nav-link">
+                    📀 My Playlists
+                </a>
+
+                <a href="#" class="nav-link">
+                    🎤 Artists
+                </a>
+
+                <a href="#" class="nav-link">
+                    📅 Events
+                </a>
+
+                <a href="#" class="nav-link">
+                    🛍️ Merchandise
+                </a>
+
+                <a href="#" class="nav-link">
+                    ⚙️ My Profile
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="nav-link logout">
+                    🚪 Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- ===============================
+             MAIN CONTENT
+        ================================ -->
+
+        <main class="dashboard-main">
+
+            <!-- TOP BAR -->
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <h1>Fan Dashboard</h1>
+
+                    <p>
+                        Discover music, follow artists and enjoy your favorite songs.
+                    </p>
+
+                </div>
+
+                <div class="user-info">
+
+                    <div class="user-avatar">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <strong id="fanName">
+                            Fan
+                        </strong>
+
+                        <span>
+                            Fan Account
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- ===============================
+                 STATISTICS
+            ================================ -->
+
+            <section class="dashboard-stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🎵
+                    </div>
+
+                    <div>
+
+                        <h3>0</h3>
+
+                        <p>
+                            Songs Played
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ❤️
+                    </div>
+
+                    <div>
+
+                        <h3>0</h3>
+
+                        <p>
+                            Liked Songs
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <h3>0</h3>
+
+                        <p>
+                            Following
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📥
+                    </div>
+
+                    <div>
+
+                        <h3>0</h3>
+
+                        <p>
+                            Downloads
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ===============================
+                 QUICK ACTIONS
+            ================================ -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Quick Actions
+                    </h2>
+
+                </div>
+
+                <div class="quick-actions">
+
+                    <a href="#" class="action-card">
+
+                        <span class="action-icon">
+                            🎵
+                        </span>
+
+                        <h3>
+                            Discover Music
+                        </h3>
+
+                        <p>
+                            Find new songs and artists.
+                        </p>
+
+                    </a>
+
+                    <a href="#" class="action-card">
+
+                        <span class="action-icon">
+                            ❤️
+                        </span>
+
+                        <h3>
+                            Liked Songs
+                        </h3>
+
+                        <p>
+                            Listen to your favorite music.
+                        </p>
+
+                    </a>
+
+                    <a href="#" class="action-card">
+
+                        <span class="action-icon">
+                            👥
+                        </span>
+
+                        <h3>
+                            Follow Artists
+                        </h3>
+
+                        <p>
+                            Keep up with your favorite artists.
+                        </p>
+
+                    </a>
+
+                    <a href="#" class="action-card">
+
+                        <span class="action-icon">
+                            📀
+                        </span>
+
+                        <h3>
+                            My Playlists
+                        </h3>
+
+                        <p>
+                            Create and manage playlists.
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- ===============================
+                 RECENTLY PLAYED
+            ================================ -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Recently Played
+                    </h2>
+
+                    <a href="#">
+                        View All
+                    </a>
+
+                </div>
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        🎵
+                    </div>
+
+                    <h3>
+                        No music played yet
+                    </h3>
+
+                    <p>
+                        Start listening to music and your recently played songs will appear here.
+                    </p>
+
+                    <a href="#" class="dashboard-btn">
+                        Discover Music
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- ===============================
+                 FOLLOWED ARTISTS
+            ================================ -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Artists You Follow
+                    </h2>
+
+                    <a href="#">
+                        View All
+                    </a>
+
+                </div>
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        👥
+                    </div>
+
+                    <h3>
+                        No artists followed yet
+                    </h3>
+
+                    <p>
+                        Follow your favorite BusiVibes artists to see them here.
+                    </p>
+
+                    <a href="#" class="dashboard-btn">
+                        Explore Artists
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- ===============================
+                 FOOTER
+            ================================ -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 BusiVibes. All Rights Reserved.
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

@@ -51,6 +51,11 @@ toggleButtons.forEach((button) => {
 
 });
 
+// Apply the initial mode from the URL, e.g. ?mode=signup
+const urlParams = new URLSearchParams(window.location.search);
+const initialMode = urlParams.get("mode") === "signup" ? "signup" : "login";
+setMode(initialMode);
+
 
 // ===============================
 // SIGN UP
@@ -69,6 +74,9 @@ signupForm.addEventListener("submit", function (event) {
     const password =
         signupForm.password.value.trim();
 
+    const accountType =
+        signupForm.accountType.value.trim();
+
     const confirmPassword =
         signupForm.confirmPassword.value.trim();
 
@@ -78,6 +86,7 @@ signupForm.addEventListener("submit", function (event) {
         !fullName ||
         !email ||
         !password ||
+        !accountType ||
         !confirmPassword
     ) {
 
@@ -140,7 +149,8 @@ signupForm.addEventListener("submit", function (event) {
 
         fullName: fullName,
         email: email,
-        password: password
+        password: password,
+        accountType: accountType
 
     };
 
@@ -246,7 +256,8 @@ loginForm.addEventListener("submit", function (event) {
         "busiVibesCurrentUser",
         JSON.stringify({
             fullName: savedUser.fullName,
-            email: savedUser.email
+            email: savedUser.email,
+            accountType: savedUser.accountType || "fan"
         })
     );
 
@@ -263,7 +274,13 @@ loginForm.addEventListener("submit", function (event) {
     // Redirect after successful login
     setTimeout(() => {
 
-        window.location.href = "index.html";
+        const userType = String(savedUser.accountType || "fan").toLowerCase();
+
+        if (userType === "artist") {
+            window.location.href = "pages/artist-dashboard.html";
+        } else {
+            window.location.href = "index.html";
+        }
 
     }, 1200);
 

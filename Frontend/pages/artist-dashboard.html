@@ -1,46 +1,389 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BusiVibes Artist Dashboard</title>
-  <link rel="stylesheet" href="../css/style.css">
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>BusiVibes | Artist Dashboard</title>
+
+<link rel="stylesheet"
+      href="../css/dashboard.css">
+```
+
 </head>
+
 <body>
 
-  <section class="artist-dashboard">
-    <h2>🎤 Artist Dashboard</h2>
+```
+<!-- SIDEBAR -->
 
-    <div class="profile-section">
-      <img id="profileImage" src="../assets/images/artists4.jpg" alt="Artist Profile Picture">
-      <div class="profile-copy">
-        <h3 id="artistName">Paul Beats</h3>
-        <p id="artistWelcome">Welcome back</p>
-      </div>
-      <button id="editProfileButton" type="button">Edit Profile</button>
+<aside class="sidebar">
+
+    <div class="dashboard-logo">
+        BusiVibes
     </div>
 
-    <div class="upload-section">
-      <h3>Upload New Song</h3>
-      <input id="songFile" type="file" accept=".mp3,audio/mpeg">
-      <input id="songTitle" type="text" placeholder="Song Title">
-      <button id="uploadSongButton" type="button">Upload Song</button>
+    <p class="artist-label">
+        ARTIST DASHBOARD
+    </p>
 
-      <h3>Upload New Video</h3>
-      <input id="videoFile" type="file" accept=".mp4,video/mp4">
-      <input id="videoTitle" type="text" placeholder="Video Title">
-      <button id="uploadVideoButton" type="button">Upload Video</button>
-    </div>
+    <nav class="dashboard-nav">
 
-    <div class="analytics-section">
-      <h3>Performance Stats</h3>
-      <p id="songsPlayed">Songs Played: 12K</p>
-      <p id="videosWatched">Videos Watched: 8K</p>
-      <p id="topSong">Top Song: Champion</p>
-    </div>
-  </section>
+        <a href="#" class="active">
+            🏠 Dashboard
+        </a>
+
+        <a href="#">
+            🎵 My Songs
+        </a>
+
+        <a href="#">
+            💿 Albums
+        </a>
+
+        <a href="#">
+            🎬 Music Videos
+        </a>
+
+        <a href="#">
+            📊 Analytics
+        </a>
+
+        <a href="#">
+            👤 My Profile
+        </a>
+
+        <a href="#">
+            📅 Events
+        </a>
+
+        <a href="#">
+            🛍️ Merchandise
+        </a>
+
+    </nav>
+
+    <button
+        class="dashboard-logout"
+        id="logoutBtn">
+        Logout
+    </button>
+
+</aside>
+
+
+<!-- MAIN CONTENT -->
+
+<main class="dashboard-main">
+
+    <!-- TOP BAR -->
+
+    <header class="dashboard-header">
+
+        <div>
+
+            <h1>
+                Artist Dashboard
+            </h1>
+
+            <p>
+                Manage your music and connect with your fans.
+            </p>
+
+        </div>
+
+        <div class="artist-welcome"
+             id="artistWelcome">
+
+            Welcome, Artist 🎤
+
+        </div>
+
+    </header>
+
+
+    <!-- STATISTICS -->
+
+    <section class="dashboard-stats">
+
+        <div class="stat-card">
+
+            <span class="stat-icon">
+                👥
+            </span>
+
+            <div>
+
+                <p>Followers</p>
+
+                <h2>22K</h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-icon">
+                ▶
+            </span>
+
+            <div>
+
+                <p>Total Streams</p>
+
+                <h2>1.2M</h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-icon">
+                ⬇
+            </span>
+
+            <div>
+
+                <p>Downloads</p>
+
+                <h2>400K</h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-icon">
+                🎵
+            </span>
+
+            <div>
+
+                <p>Total Songs</p>
+
+                <h2>4</h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUICK ACTIONS -->
+
+    <section class="dashboard-section">
+
+        <div class="section-header">
+
+            <h2>
+                Quick Actions
+            </h2>
+
+        </div>
+
+
+        <div class="quick-actions">
+
+            <button class="action-card">
+
+                <span>🎵</span>
+
+                <strong>
+                    Upload Song
+                </strong>
+
+                <small>
+                    Add new music
+                </small>
+
+            </button>
+
+
+            <button class="action-card">
+
+                <span>💿</span>
+
+                <strong>
+                    Create Album
+                </strong>
+
+                <small>
+                    Organize your songs
+                </small>
+
+            </button>
+
+
+            <button class="action-card">
+
+                <span>🎬</span>
+
+                <strong>
+                    Upload Video
+                </strong>
+
+                <small>
+                    Share a music video
+                </small>
+
+            </button>
+
+
+            <button class="action-card">
+
+                <span>✏️</span>
+
+                <strong>
+                    Edit Profile
+                </strong>
+
+                <small>
+                    Update your artist page
+                </small>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- RECENT SONGS -->
+
+    <section class="dashboard-section">
+
+        <div class="section-header">
+
+            <h2>
+                Your Music
+            </h2>
+
+            <a href="#">
+                View All
+            </a>
+
+        </div>
+
+
+        <div class="music-table">
+
+            <div class="music-row music-heading">
+
+                <span>Song</span>
+                <span>Streams</span>
+                <span>Downloads</span>
+                <span>Status</span>
+
+            </div>
+
+
+            <div class="music-row">
+
+                <span>
+                    🎵 Champion
+                </span>
+
+                <span>
+                    2.1M
+                </span>
+
+                <span>
+                    150K
+                </span>
+
+                <span class="status">
+                    Published
+                </span>
+
+            </div>
+
+
+            <div class="music-row">
+
+                <span>
+                    🎵 Rise Up
+                </span>
+
+                <span>
+                    1.4M
+                </span>
+
+                <span>
+                    120K
+                </span>
+
+                <span class="status">
+                    Published
+                </span>
+
+            </div>
+
+
+            <div class="music-row">
+
+                <span>
+                    🎵 Dream Big
+                </span>
+
+                <span>
+                    900K
+                </span>
+
+                <span>
+                    80K
+                </span>
+
+                <span class="status">
+                    Published
+                </span>
+
+            </div>
+
+
+            <div class="music-row">
+
+                <span>
+                    🎵 Forever
+                </span>
+
+                <span>
+                    500K
+                </span>
+
+                <span>
+                    50K
+                </span>
+
+                <span class="status">
+                    Published
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script src="../js/dashboard.js"></script>
+```
 
 </body>
-<script src="../js/dashboard.js"></script>
-<script src="../js/main.js"></script>
+
 </html>
