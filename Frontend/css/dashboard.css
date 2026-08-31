@@ -175,6 +175,23 @@ body {
 }
 
 
+.play-song-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.play-song-btn:hover {
+    background-color: var(--primary-soft);
+}
+
+
 /* ========================================
    STATISTICS
 ======================================== */
@@ -692,29 +709,594 @@ body {
     color: #777;
     font-size: 13px;
 }
+/* =====================================================
+   DISCOVER MUSIC PAGE
+   ===================================================== */
+
+/* SEARCH */
+.music-search {
+    max-width: 650px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 5px 8px 5px 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.music-search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 14px 10px;
+    font-size: 15px;
+}
+
+.music-search input::placeholder {
+    color: #999;
+}
+
+.music-search button {
+    border: none;
+    background: #8f00ff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.music-search button:hover {
+    background: #7200cc;
+    transform: translateY(-2px);
+}
 
 
-/* ========================================
-   FAN DASHBOARD RESPONSIVE
-======================================== */
+/* =====================================================
+   MUSIC GRID
+   ===================================================== */
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.music-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+}
+
+.music-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+
+/* SONG COVER */
+
+.music-cover {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #8f00ff,
+        #2b0045
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 60px;
+    color: white;
+}
+
+.music-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* MUSIC INFORMATION */
+
+.music-info {
+    padding: 18px 18px 10px;
+}
+
+.music-info h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.music-info p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* MUSIC BUTTONS */
+
+.music-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px 18px;
+}
+
+.music-actions button {
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+/* PLAY */
+
+.play-btn {
+    flex: 1;
+    background: #8f00ff;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.play-btn:hover {
+    background: #7200cc;
+    transform: translateY(-2px);
+}
+
+
+/* LIKE */
+
+.like-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #f5f5f5;
+    color: #e63946;
+    font-size: 20px;
+}
+
+.like-btn:hover {
+    background: #ffe5e8;
+}
+
+
+/* DOWNLOAD */
+
+.download-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #f5f5f5;
+    color: #222;
+    font-size: 20px;
+}
+
+.download-btn:hover {
+    background: #e9e9e9;
+}
+
+
+/* =====================================================
+   POPULAR ARTISTS
+   ===================================================== */
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.artist-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+    border-color: #8f00ff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ARTIST AVATAR */
+
+.artist-avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1e4ff;
+    border-radius: 50%;
+
+    font-size: 40px;
+}
+
+.artist-card h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.artist-card p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+
+/* FOLLOW BUTTON */
+
+.follow-btn {
+    border: none;
+    background: #8f00ff;
+    color: white;
+
+    padding: 9px 20px;
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.follow-btn:hover {
+    background: #7200cc;
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   LATEST MUSIC
+   ===================================================== */
+
+#musicResults {
+    display: flex;
+    flex-direction: column;
+}
+
+.music-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 10px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.music-list-item:last-child {
+    border-bottom: none;
+}
+
+.music-list-item strong {
+    font-size: 15px;
+}
+
+.music-list-item p {
+    color: #777;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.music-list-item .play-btn {
+    flex: none;
+    width: auto;
+    padding: 9px 18px;
+}
+
+/* =====================================================
+   BOTTOM MUSIC PLAYER
+   ===================================================== */
+
+.dashboard-main {
+   padding-bottom: 120px;
+}
+
+.bottom-music-player {
+   position: fixed;
+   left: 250px;
+   right: 0;
+   bottom: 0;
+   z-index: 100;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 20px;
+   padding: 12px 24px;
+   background: rgba(17, 17, 17, 0.96);
+   color: #fff;
+   border-top: 1px solid rgba(255, 255, 255, 0.1);
+   backdrop-filter: blur(10px);
+   box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.player-song-info {
+   display: flex;
+   align-items: center;
+   gap: 14px;
+   min-width: 220px;
+}
+
+.player-cover {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.player-details {
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+}
+
+.player-details strong {
+   font-size: 14px;
+   line-height: 1.3;
+}
+
+.player-details span {
+   color: #cfcfcf;
+   font-size: 12px;
+}
+
+.player-controls {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 12px;
+   flex: 1;
+}
+
+.player-controls button {
+   border: none;
+   background: transparent;
+   color: white;
+   cursor: pointer;
+   font-size: 18px;
+   width: 38px;
+   height: 38px;
+   border-radius: 50%;
+   transition: 0.2s ease;
+}
+
+.player-controls button:hover {
+   background: rgba(255, 255, 255, 0.08);
+}
+
+.main-play-button {
+   width: 40px !important;
+   height: 40px !important;
+   background: #8f00ff !important;
+   font-size: 18px !important;
+}
+
+.player-progress {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+   flex: 2;
+   min-width: 220px;
+   color: #d7d7d7;
+   font-size: 12px;
+}
+
+.player-progress input[type="range"] {
+   width: 100%;
+   accent-color: #8f00ff;
+}
+
+.player-volume {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   min-width: 160px;
+   justify-content: flex-end;
+}
+
+.player-volume input[type="range"] {
+   width: 110px;
+   accent-color: #8f00ff;
+}
+
+@media (max-width: 900px) {
+   .bottom-music-player {
+       left: 0;
+       flex-wrap: wrap;
+       padding: 12px 16px;
+       height: auto;
+   }
+
+   .player-song-info,
+   .player-progress,
+   .player-volume {
+       min-width: auto;
+   }
+
+   .player-progress {
+       order: 3;
+       width: 100%;
+   }
+}
+
+/* =====================================================
+   DISCOVER MUSIC RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1100px) {
+
+    .music-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .artists-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
 
 @media (max-width: 768px) {
 
-    .sidebar-logo {
-        text-align: left;
+    .music-search {
+        width: 100%;
     }
 
-    .sidebar-nav {
-        flex-direction: row;
+    .music-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .artists-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .music-cover {
+        height: 250px;
+    }
+
+}
+
+
+.liked-songs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.liked-song-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.song-cover {
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.song-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.song-title {
+    font-size: 18px;
+    margin-bottom: 4px;
+    color: #222;
+}
+
+.artist-name {
+    color: #777;
+    font-size: 14px;
+}
+
+.play-btn,
+.unlike-btn {
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.play-btn {
+    background: #8f00ff;
+    color: #fff;
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+}
+
+.unlike-btn {
+    background: #ffe5e8;
+    color: #e63946;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+}
+
+.play-btn:hover,
+.unlike-btn:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 550px) {
+
+    .music-search {
+        padding-left: 12px;
+    }
+
+    .music-search input {
+        min-width: 0;
+        font-size: 14px;
+    }
+
+    .music-search button {
+        padding: 10px 14px;
+    }
+
+    .music-list-item {
+        gap: 15px;
+    }
+
+    .liked-song-card {
         flex-wrap: wrap;
     }
 
-    .sidebar-nav .nav-link {
-        padding: 10px 12px;
-    }
+}
+/* DISCOVER ARTIST IMAGES */
 
-    .sidebar-bottom {
-        margin-top: 20px;
-    }
+.artist-avatar {
+    overflow: hidden;
+}
 
+.artist-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }

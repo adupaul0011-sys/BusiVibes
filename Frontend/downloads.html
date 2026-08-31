@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Downloads - BusiVibes</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f7;
+        color: #222;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .dashboard-main {
+        max-width: 980px;
+        margin: 40px auto;
+        padding: 0 20px 80px;
+        flex-grow: 1;
+        width: 100%;
+      }
+
+      .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 28px;
+        flex-wrap: wrap;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 3vw, 2.7rem);
+        color: #8f00ff;
+        font-weight: 700;
+      }
+
+      .header-badge {
+        background: #f1e8ff;
+        color: #7a2ad1;
+        padding: 10px 16px;
+        border-radius: 999px;
+        font-size: 0.86rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      #downloadsList {
+        display: grid;
+        gap: 20px;
+      }
+
+      .download-card {
+        display: flex;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        padding: 18px 20px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        border: 1px solid #f0ebf7;
+      }
+
+      .download-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      }
+
+      .song-info {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        min-width: 0;
+        flex: 1;
+      }
+
+      .download-cover {
+        width: 82px;
+        height: 82px;
+        border-radius: 16px;
+        overflow: hidden;
+        flex-shrink: 0;
+        background: linear-gradient(135deg, #1b0d2a, #7a2ad1);
+      }
+
+      .download-cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .download-meta {
+        min-width: 0;
+        flex: 1;
+      }
+
+      .download-meta h3 {
+        font-size: 1.2rem;
+        margin-bottom: 6px;
+        color: #1f1a2d;
+      }
+
+      .download-meta p {
+        color: #666;
+        font-size: 0.96rem;
+        margin-bottom: 8px;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        background: #f5f0ff;
+        color: #6c2bc4;
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        font-weight: 700;
+      }
+
+      .download-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+      }
+
+      .status {
+        font-size: 0.82rem;
+        font-weight: 700;
+        background: #eafaf0;
+        color: #1a8f48;
+        border-radius: 999px;
+        padding: 7px 10px;
+        white-space: nowrap;
+      }
+
+      .audio-player {
+        width: 180px;
+        height: 32px;
+        border-radius: 8px;
+        background: #faf7ff;
+        border: 1px solid #efe7ff;
+      }
+
+      .download-btn {
+        border: none;
+        border-radius: 10px;
+        padding: 10px 14px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.2s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .download-btn.primary {
+        background: #8f00ff;
+        color: white;
+      }
+
+      .download-btn.secondary {
+        background: #f4f4f6;
+        color: #333;
+      }
+
+      .download-btn.danger {
+        background: #ffeaea;
+        color: #c72828;
+      }
+
+      .download-btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .empty-state {
+        background: #fff;
+        border-radius: 18px;
+        padding: 40px 24px;
+        text-align: center;
+        color: #666;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      }
+
+      .empty-state .icon {
+        font-size: 2.8rem;
+        margin-bottom: 12px;
+      }
+
+      .empty-state h3 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+        color: #222;
+      }
+
+      .toast {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        background: #1a1a1a;
+        color: #fff;
+        padding: 12px 16px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        pointer-events: none;
+        z-index: 1000;
+      }
+
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 700px) {
+        .download-card {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .song-info {
+          width: 100%;
+        }
+
+        .download-actions {
+          width: 100%;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+
+        .audio-player {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="dashboard-main">
+      <div class="page-header">
+        <h1>My Downloads</h1>
+        <div class="header-badge">4 songs available offline</div>
+      </div>
+
+      <div id="downloadsList"></div>
+    </main>
+
+    <script>
+      const STORAGE_KEY = 'busiVibesDownloads';
+
+      const initialDownloads = [
+        {
+          id: 1,
+          title: 'Champion',
+          artist: 'BusiVibes',
+          duration: '3:24',
+          size: '18.4 MB',
+          date: 'Downloaded today',
+          image: 'assets/song-cover/Champion.png',
+          audio: 'assets/audio-files/Champion.mp3',
+          downloadUrl: 'assets/audio-files/Champion.mp3'
+        },
+        {
+          id: 2,
+          title: 'Rise Up',
+          artist: 'BusiVibes',
+          duration: '2:58',
+          size: '17.8 MB',
+          date: 'Downloaded yesterday',
+          image: 'assets/song-cover/Rise Up.png',
+          audio: 'assets/audio-files/Rise Up.mp3',
+          downloadUrl: 'assets/audio-files/Rise Up.mp3'
+        },
+        {
+          id: 3,
+          title: 'Dream Big',
+          artist: 'BusiVibes',
+          duration: '3:10',
+          size: '16.5 MB',
+          date: 'Downloaded 2 days ago',
+          image: 'assets/song-cover/Dream Big.png',
+          audio: 'assets/audio-files/Dream Big.mp3',
+          downloadUrl: 'assets/audio-files/Dream Big.mp3'
+        }
+      ];
+
+      function getDownloads() {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (!saved) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(initialDownloads));
+          return [...initialDownloads];
+        }
+
+        try {
+          const parsed = JSON.parse(saved);
+          return Array.isArray(parsed) && parsed.length ? parsed : [...initialDownloads];
+        } catch (error) {
+          console.error('Invalid downloads data in localStorage.', error);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(initialDownloads));
+          return [...initialDownloads];
+        }
+      }
+
+      function saveDownloads(downloads) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(downloads));
+      }
+
+      function showToast(message) {
+        let toast = document.getElementById('toast');
+        if (!toast) {
+          toast = document.createElement('div');
+          toast.id = 'toast';
+          toast.className = 'toast';
+          document.body.appendChild(toast);
+        }
+
+        toast.textContent = message;
+        toast.classList.add('show');
+
+        clearTimeout(showToast.timeoutId);
+        showToast.timeoutId = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 1800);
+      }
+
+      function renderDownloads() {
+        const container = document.getElementById('downloadsList');
+        const downloads = getDownloads();
+
+        if (!downloads.length) {
+          container.innerHTML = `
+            <div class="empty-state" aria-live="polite">
+              <div class="icon">📥</div>
+              <h3>No downloads yet</h3>
+              <p>Save tracks to listen offline anytime.</p>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = downloads
+          .map(
+            (song) => `
+              <article class="download-card" aria-label="Downloaded song ${song.title}">
+                <div class="song-info">
+                  <div class="download-cover">
+                    <img src="${song.image}" alt="${song.title} cover art" />
+                  </div>
+
+                  <div class="download-meta">
+                    <h3>${song.title}</h3>
+                    <p>${song.artist}</p>
+                    <div class="tags">
+                      <span class="tag">${song.duration}</span>
+                      <span class="tag">${song.size}</span>
+                      <span class="tag">${song.date}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="download-actions">
+                  <span class="status">Ready</span>
+
+                  <audio class="audio-player" controls preload="none" aria-label="Play ${song.title}">
+                    <source src="${song.audio}" type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                  </audio>
+
+                  <a
+                    class="download-btn primary"
+                    href="${song.downloadUrl}"
+                    download
+                    aria-label="Download ${song.title}"
+                  >
+                    Download
+                  </a>
+
+                  <button
+                    class="download-btn danger"
+                    type="button"
+                    data-id="${song.id}"
+                    aria-label="Remove ${song.title} from downloads"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </article>
+            `
+          )
+          .join('');
+
+        container.querySelectorAll('.download-btn.danger').forEach((button) => {
+          button.addEventListener('click', () => {
+            const idToRemove = Number(button.dataset.id);
+            const downloads = getDownloads().filter((song) => song.id !== idToRemove);
+            saveDownloads(downloads);
+            renderDownloads();
+            showToast('Song removed from downloads');
+          });
+        });
+      }
+
+      renderDownloads();
+    </script>
+  </body>
+</html>
