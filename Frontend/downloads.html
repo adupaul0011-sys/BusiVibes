@@ -264,57 +264,21 @@
 
     <script>
       const STORAGE_KEY = 'busiVibesDownloads';
-
-      const initialDownloads = [
-        {
-          id: 1,
-          title: 'Champion',
-          artist: 'BusiVibes',
-          duration: '3:24',
-          size: '18.4 MB',
-          date: 'Downloaded today',
-          image: 'assets/song-cover/Champion.png',
-          audio: 'assets/audio-files/Champion.mp3',
-          downloadUrl: 'assets/audio-files/Champion.mp3'
-        },
-        {
-          id: 2,
-          title: 'Rise Up',
-          artist: 'BusiVibes',
-          duration: '2:58',
-          size: '17.8 MB',
-          date: 'Downloaded yesterday',
-          image: 'assets/song-cover/Rise Up.png',
-          audio: 'assets/audio-files/Rise Up.mp3',
-          downloadUrl: 'assets/audio-files/Rise Up.mp3'
-        },
-        {
-          id: 3,
-          title: 'Dream Big',
-          artist: 'BusiVibes',
-          duration: '3:10',
-          size: '16.5 MB',
-          date: 'Downloaded 2 days ago',
-          image: 'assets/song-cover/Dream Big.png',
-          audio: 'assets/audio-files/Dream Big.mp3',
-          downloadUrl: 'assets/audio-files/Dream Big.mp3'
-        }
-      ];
+      const downloadsList = document.getElementById('downloadsList');
 
       function getDownloads() {
         const saved = localStorage.getItem(STORAGE_KEY);
+
         if (!saved) {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(initialDownloads));
-          return [...initialDownloads];
+          return [];
         }
 
         try {
           const parsed = JSON.parse(saved);
-          return Array.isArray(parsed) && parsed.length ? parsed : [...initialDownloads];
+          return Array.isArray(parsed) ? parsed : [];
         } catch (error) {
-          console.error('Invalid downloads data in localStorage.', error);
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(initialDownloads));
-          return [...initialDownloads];
+          console.error('Invalid downloads data:', error);
+          return [];
         }
       }
 
@@ -322,98 +286,75 @@
         localStorage.setItem(STORAGE_KEY, JSON.stringify(downloads));
       }
 
-      function showToast(message) {
-        let toast = document.getElementById('toast');
-        if (!toast) {
-          toast = document.createElement('div');
-          toast.id = 'toast';
-          toast.className = 'toast';
-          document.body.appendChild(toast);
-        }
-
-        toast.textContent = message;
-        toast.classList.add('show');
-
-        clearTimeout(showToast.timeoutId);
-        showToast.timeoutId = setTimeout(() => {
-          toast.classList.remove('show');
-        }, 1800);
+      function normalizeAssetPath(path) {
+        if (!path) return '';
+        if (/^(https?:)?\/\//i.test(path)) return path;
+        return path.startsWith('./') ? path : `./${path}`;
       }
 
       function renderDownloads() {
-        const container = document.getElementById('downloadsList');
         const downloads = getDownloads();
 
+        if (!downloadsList) return;
+
+        downloadsList.innerHTML = '';
+
+        const badge = document.querySelector('.header-badge');
+        if (badge) {
+          badge.textContent = `${downloads.length} song${downloads.length === 1 ? '' : 's'} available offline`;
+        }
+
         if (!downloads.length) {
-          container.innerHTML = `
-            <div class="empty-state" aria-live="polite">
-              <div class="icon">📥</div>
-              <h3>No downloads yet</h3>
-              <p>Save tracks to listen offline anytime.</p>
-            </div>
+          const emptyState = document.createElement('div');
+          emptyState.className = 'empty-state';
+          emptyState.innerHTML = `
+            <div class="icon">📭</div>
+            <h3>No downloads yet</h3>
+            <p>Download songs from Discover Music and they will appear here.</p>
           `;
+          downloadsList.appendChild(emptyState);
           return;
         }
 
-        container.innerHTML = downloads
-          .map(
-            (song) => `
-              <article class="download-card" aria-label="Downloaded song ${song.title}">
-                <div class="song-info">
-                  <div class="download-cover">
-                    <img src="${song.image}" alt="${song.title} cover art" />
-                  </div>
+        downloads.forEach((song) => {
+          const card = document.createElement('div');
+          card.className = 'download-card';
 
-                  <div class="download-meta">
-                    <h3>${song.title}</h3>
-                    <p>${song.artist}</p>
-                    <div class="tags">
-                      <span class="tag">${song.duration}</span>
-                      <span class="tag">${song.size}</span>
-                      <span class="tag">${song.date}</span>
-                    </div>
-                  </div>
+          const coverUrl = normalizeAssetPath(song.image || song.cover || 'assets/song-cover/default.png');
+          const audioUrl = normalizeAssetPath(song.audio || song.downloadUrl || '');
+
+          card.innerHTML = `
+            <div class="song-info">
+              <div class="download-cover">
+                <img src="${coverUrl}" alt="${song.title || 'Song'} cover" />
+              </div>
+
+              <div class="download-meta">
+                <h3>${song.title || 'Untitled Song'}</h3>
+                <p>${song.artist || 'Unknown Artist'}</p>
+                <div class="tags">
+                  <span class="tag">${song.duration || 'Music'}</span>
+                  <span class="tag">${song.size || 'Downloaded'}</span>
+                  <span class="tag">${song.date || 'Downloaded'}</span>
                 </div>
+              </div>
+            </div>
 
-                <div class="download-actions">
-                  <span class="status">Ready</span>
+            <div class="download-actions">
+              <span class="status">Ready</span>
+              <audio class="audio-player" controls src="${audioUrl}"></audio>
+              <button class="download-btn danger remove-btn" type="button">Remove</button>
+            </div>
+          `;
 
-                  <audio class="audio-player" controls preload="none" aria-label="Play ${song.title}">
-                    <source src="${song.audio}" type="audio/mpeg" />
-                    Your browser does not support the audio element.
-                  </audio>
-
-                  <a
-                    class="download-btn primary"
-                    href="${song.downloadUrl}"
-                    download
-                    aria-label="Download ${song.title}"
-                  >
-                    Download
-                  </a>
-
-                  <button
-                    class="download-btn danger"
-                    type="button"
-                    data-id="${song.id}"
-                    aria-label="Remove ${song.title} from downloads"
-                  >
-                    Remove
-                  </button>
-                </div>
-              </article>
-            `
-          )
-          .join('');
-
-        container.querySelectorAll('.download-btn.danger').forEach((button) => {
-          button.addEventListener('click', () => {
-            const idToRemove = Number(button.dataset.id);
-            const downloads = getDownloads().filter((song) => song.id !== idToRemove);
-            saveDownloads(downloads);
+          const removeButton = card.querySelector('.remove-btn');
+          removeButton.addEventListener('click', () => {
+            const updatedDownloads = getDownloads().filter((item) => item.title !== song.title || item.artist !== song.artist);
+            saveDownloads(updatedDownloads);
             renderDownloads();
-            showToast('Song removed from downloads');
           });
+
+          downloadsList.appendChild(card);
         });
       }
 

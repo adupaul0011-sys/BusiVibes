@@ -47,15 +47,15 @@
                     ❤️ Liked Songs
                 </a>
 
-                <a href="#" class="nav-link">
+                <a href="downloads.html" class="nav-link">
                     📥 Downloads
                 </a>
 
-                <a href="#" class="nav-link">
+                <a href="following-artists.html" class="nav-link">
                     👥 Following Artists
                 </a>
 
-                <a href="#" class="nav-link">
+                <a href="my-playlists.html" class="nav-link">
                     📀 My Playlists
                 </a>
 
@@ -390,6 +390,33 @@
     </div>
 
     <script src="js/dashboard.js"></script>
+    <script>
+        const isLoggedIn = localStorage.getItem("busiVibesLoggedIn") === "true";
+        const currentUser = JSON.parse(localStorage.getItem("busiVibesCurrentUser") || "null");
+
+        if (!isLoggedIn || !currentUser) {
+            window.location.href = "login.html";
+        } else {
+            const fanNameElement = document.getElementById("fanName");
+
+            if (fanNameElement) {
+                fanNameElement.textContent = currentUser.fullName || "Fan";
+            }
+        }
+
+        const logoutButton = document.querySelector(".logout");
+
+        if (logoutButton) {
+            logoutButton.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                localStorage.removeItem("busiVibesLoggedIn");
+                localStorage.removeItem("busiVibesCurrentUser");
+
+                window.location.href = "login.html";
+            });
+        }
+    </script>
 
 </body>
 

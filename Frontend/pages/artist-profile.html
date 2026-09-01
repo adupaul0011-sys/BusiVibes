@@ -1,0 +1,1148 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Artist Profile | BusiVibes</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+
+    <style>
+
+        /* ===============================
+           ARTIST PROFILE
+        ================================ */
+
+        .artist-profile-header {
+            background: linear-gradient(135deg, #1b0d2a, #8f00ff);
+            border-radius: 22px;
+            padding: 35px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .artist-profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            flex-shrink: 0;
+        }
+
+        .artist-profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .artist-profile-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+        }
+
+        .verified {
+            color: #ffffff;
+            font-size: 1rem;
+            margin-left: 5px;
+        }
+
+        .artist-profile-info p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .artist-stats {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .artist-stat strong {
+            display: block;
+            font-size: 1.3rem;
+        }
+
+        .artist-stat span {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .profile-follow-btn {
+            border: none;
+            background: white;
+            color: #8f00ff;
+            padding: 11px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .profile-follow-btn:hover {
+            transform: translateY(-2px);
+        }
+
+
+        /* ===============================
+           TOP SONGS
+        ================================ */
+
+        .profile-song-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .profile-song {
+            background: white;
+            border-radius: 14px;
+            padding: 15px 18px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+        }
+
+        .profile-song-cover {
+            width: 55px;
+            height: 55px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .profile-song-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-song-info {
+            flex: 1;
+        }
+
+        .profile-song-info strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .profile-song-info span {
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        .profile-play-btn {
+            border: none;
+            background: #8f00ff;
+            color: white;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .profile-play-btn:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* ===============================
+           ABOUT
+        ================================ */
+
+        .artist-about {
+            background: white;
+            border-radius: 18px;
+            padding: 25px;
+            line-height: 1.7;
+            color: #555;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+        }
+
+
+        /* ===============================
+           SOCIAL LINKS
+        ================================ */
+
+        .artist-socials {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .artist-socials a {
+            text-decoration: none;
+            background: white;
+            color: #8f00ff;
+            border: 1px solid #eee;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-weight: 700;
+        }
+
+
+        /* ===============================
+           MOBILE
+        ================================ */
+
+        @media (max-width: 700px) {
+
+            .artist-profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .artist-stats {
+                justify-content: center;
+            }
+
+            .profile-song {
+                padding: 12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="dashboard-container">
+
+
+        <!-- ===============================
+             SIDEBAR
+        ================================ -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <h2>BusiVibes</h2>
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="../fan-dashboard.html" class="nav-link">
+                    🏠 Dashboard
+                </a>
+
+                <a href="../discover-music.html" class="nav-link">
+                    🎵 Discover Music
+                </a>
+
+                <a href="../liked-songs.html" class="nav-link">
+                    ❤️ Liked Songs
+                </a>
+
+                <a href="../downloads.html" class="nav-link">
+                    📥 Downloads
+                </a>
+
+                <a href="../following-artists.html" class="nav-link">
+                    👥 Following Artists
+                </a>
+
+                <a href="../my-playlists.html" class="nav-link">
+                    📀 My Playlists
+                </a>
+
+                <a href="../artists.html" class="nav-link active">
+                    🎤 Artists
+                </a>
+
+                <a href="#" class="nav-link">
+                    📅 Events
+                </a>
+
+                <a href="#" class="nav-link">
+                    🛍️ Merchandise
+                </a>
+
+                <a href="#" class="nav-link">
+                    ⚙️ My Profile
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="nav-link logout">
+                    🚪 Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ===============================
+             MAIN CONTENT
+        ================================ -->
+
+        <main class="dashboard-main">
+
+
+            <!-- ===============================
+                 ARTIST HEADER
+            ================================ -->
+
+            <section class="artist-profile-header">
+
+                <div class="artist-profile-image">
+
+                    <img
+                        id="artistImage"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+
+                <div class="artist-profile-info">
+
+                    <h1>
+
+                        <span id="artistName">
+                            Artist
+                        </span>
+
+                        <span class="verified">
+                            ✓
+                        </span>
+
+                    </h1>
+
+
+                    <p id="artistGenre">
+                        Artist
+                    </p>
+
+
+                    <div class="artist-stats">
+
+
+                        <div class="artist-stat">
+
+                            <strong id="artistFollowers">
+                                0
+                            </strong>
+
+                            <span>
+                                Followers
+                            </span>
+
+                        </div>
+
+
+                        <div class="artist-stat">
+
+                            <strong id="artistStreams">
+                                0
+                            </strong>
+
+                            <span>
+                                Streams
+                            </span>
+
+                        </div>
+
+
+                        <div class="artist-stat">
+
+                            <strong id="artistSongs">
+                                0
+                            </strong>
+
+                            <span>
+                                Songs
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <button
+                        class="profile-follow-btn"
+                        id="profileFollowBtn"
+                    >
+                        + Follow
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ===============================
+                 TOP SONGS
+            ================================ -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Top Songs 🎵
+                    </h2>
+
+                </div>
+
+
+                <div
+                    class="profile-song-list"
+                    id="profileSongList"
+                >
+
+                </div>
+
+            </section>
+
+
+            <!-- ===============================
+                 ABOUT
+            ================================ -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        About
+                        <span id="aboutArtistName">
+                            Artist
+                        </span>
+                    </h2>
+
+                </div>
+
+
+                <div
+                    class="artist-about"
+                    id="artistAbout"
+                >
+
+                </div>
+
+            </section>
+
+
+            <!-- ===============================
+                 SOCIAL MEDIA
+            ================================ -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Follow
+                        <span id="socialArtistName">
+                            Artist
+                        </span>
+                    </h2>
+
+                </div>
+
+
+                <div
+                    class="artist-socials"
+                    id="artistSocials"
+                >
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 BusiVibes. All Rights Reserved.
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script>
+
+        // ========================================
+        // CURRENT USER
+        // ========================================
+
+        let currentUser = null;
+
+        try {
+
+            currentUser = JSON.parse(
+                localStorage.getItem("busiVibesCurrentUser")
+            );
+
+        } catch (error) {
+
+            currentUser = null;
+
+        }
+
+
+        if (!currentUser) {
+
+            window.location.href = "../login.html";
+
+        }
+
+
+        // ========================================
+        // GET ARTIST FROM URL
+        // ========================================
+
+        const urlParams =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const artistSlug =
+            urlParams.get("artist");
+
+
+        // ========================================
+        // ARTIST DATABASE
+        // ========================================
+
+        const artists = {
+
+            "paul-beats": {
+
+                name: "Paul Beats",
+
+                genre: "Afropop Artist",
+
+                image: "../assets/images/paul-beats.png",
+
+                followers: "22K",
+
+                streams: "1.2M",
+
+                about:
+                    "Paul Beats is an Afropop artist bringing energetic melodies, meaningful lyrics and modern African sounds to music lovers around the world.",
+
+                socials: {
+
+                    Instagram: "#",
+
+                    TikTok: "#",
+
+                    YouTube: "#",
+
+                    X: "#"
+
+                },
+
+                songs: [
+
+                    {
+                        title: "Champion",
+                        streams: "2.1M Streams",
+                        duration: "3:45",
+                        cover: "../assets/song-cover/Champion.png",
+                        audio: "../assets/audio-files/Champion.mp3"
+                    },
+
+                    {
+                        title: "Rise Up",
+                        streams: "1.4M Streams",
+                        duration: "4:01",
+                        cover: "../assets/song-cover/Rise Up.png",
+                        audio: "../assets/audio-files/Rise Up.mp3"
+                    },
+
+                    {
+                        title: "Dream Big",
+                        streams: "900K Streams",
+                        duration: "2:58",
+                        cover: "../assets/song-cover/Dream Big.png",
+                        audio: "../assets/audio-files/Dream Big.mp3"
+                    },
+
+                    {
+                        title: "Forever",
+                        streams: "500K Streams",
+                        duration: "3:30",
+                        cover: "../assets/song-cover/Forever.png",
+                        audio: "../assets/audio-files/Forever.mp3"
+                    }
+
+                ]
+
+            },
+
+
+            "decartella": {
+
+                name: "Decartella",
+
+                genre: "Vocalist",
+
+                image: "../assets/images/artists2.jpg",
+
+                followers: "18K",
+
+                streams: "950K",
+
+                about:
+                    "Decartella is a talented vocalist known for powerful performances, emotional melodies and a unique African sound.",
+
+                socials: {
+
+                    Instagram: "#",
+
+                    TikTok: "#",
+
+                    YouTube: "#",
+
+                    X: "#"
+
+                },
+
+                songs: []
+
+            },
+
+
+            "kofi-jamar": {
+
+                name: "Kofi Jamar",
+
+                genre: "Afrobeats Artist",
+
+                image: "../assets/images/artists3.jpg",
+
+                followers: "31K",
+
+                streams: "2.4M",
+
+                about:
+                    "Kofi Jamar is an Afrobeats artist creating energetic music inspired by modern African culture and everyday experiences.",
+
+                socials: {
+
+                    Instagram: "#",
+
+                    TikTok: "#",
+
+                    YouTube: "#",
+
+                    X: "#"
+
+                },
+
+                songs: []
+
+            },
+
+
+            "lyrical-kings": {
+
+                name: "Lyrical Kings",
+
+                genre: "Group",
+
+                image: "../assets/images/artists4.jpg",
+
+                followers: "27K",
+
+                streams: "1.8M",
+
+                about:
+                    "Lyrical Kings is a talented music group delivering powerful lyrics, creative sounds and memorable performances.",
+
+                socials: {
+
+                    Instagram: "#",
+
+                    TikTok: "#",
+
+                    YouTube: "#",
+
+                    X: "#"
+
+                },
+
+                songs: []
+
+            },
+
+
+            "amaarae": {
+
+                name: "Amaarae",
+
+                genre: "Afropop Artist",
+
+                image: "../assets/images/artists5.jpg",
+
+                followers: "45K",
+
+                streams: "3.1M",
+
+                about:
+                    "Amaarae is an Afropop artist bringing a fresh sound, creative energy and distinctive style to modern African music.",
+
+                socials: {
+
+                    Instagram: "#",
+
+                    TikTok: "#",
+
+                    YouTube: "#",
+
+                    X: "#"
+
+                },
+
+                songs: []
+
+            },
+
+
+            "black-tunez": {
+
+                name: "Black Tunez",
+
+                genre: "Producer",
+
+                image: "../assets/images/artists6.jpg",
+
+                followers: "15K",
+
+                streams: "780K",
+
+                about:
+                    "Black Tunez is a creative producer focused on crafting modern African sounds and helping artists bring their musical ideas to life.",
+
+                socials: {
+
+                    Instagram: "#",
+
+                    TikTok: "#",
+
+                    YouTube: "#",
+
+                    X: "#"
+
+                },
+
+                songs: []
+
+            }
+
+        };
+
+
+        // ========================================
+        // CHECK ARTIST
+        // ========================================
+
+        const artist =
+            artists[artistSlug];
+
+
+        if (!artist) {
+
+            window.location.href =
+                "../artists.html";
+
+        }
+
+
+        // ========================================
+        // DISPLAY ARTIST
+        // ========================================
+
+        document.getElementById(
+            "artistName"
+        ).textContent =
+            artist.name;
+
+
+        document.getElementById(
+            "artistGenre"
+        ).textContent =
+            artist.genre;
+
+
+        document.getElementById(
+            "artistImage"
+        ).src =
+            artist.image;
+
+
+        document.getElementById(
+            "artistImage"
+        ).alt =
+            artist.name;
+
+
+        document.getElementById(
+            "artistFollowers"
+        ).textContent =
+            artist.followers;
+
+
+        document.getElementById(
+            "artistStreams"
+        ).textContent =
+            artist.streams;
+
+
+        document.getElementById(
+            "artistSongs"
+        ).textContent =
+            artist.songs.length;
+
+
+        document.getElementById(
+            "aboutArtistName"
+        ).textContent =
+            artist.name;
+
+
+        document.getElementById(
+            "socialArtistName"
+        ).textContent =
+            artist.name;
+
+
+        document.getElementById(
+            "artistAbout"
+        ).textContent =
+            artist.about;
+
+
+        // ========================================
+        // SOCIAL LINKS
+        // ========================================
+
+        const socialsContainer =
+            document.getElementById(
+                "artistSocials"
+            );
+
+
+        Object.keys(artist.socials).forEach(
+            function(platform) {
+
+                const link =
+                    document.createElement("a");
+
+                link.href =
+                    artist.socials[platform];
+
+                link.target =
+                    "_blank";
+
+                link.textContent =
+                    platform;
+
+                socialsContainer.appendChild(link);
+
+            }
+        );
+
+
+        // ========================================
+        // SONGS
+        // ========================================
+
+        const songList =
+            document.getElementById(
+                "profileSongList"
+            );
+
+
+        if (!artist.songs.length) {
+
+            songList.innerHTML = `
+
+                <div class="artist-about">
+
+                    <strong>
+                        No songs available yet.
+                    </strong>
+
+                    <p>
+                        This artist has not uploaded
+                        music to BusiVibes yet.
+                    </p>
+
+                </div>
+
+            `;
+
+        } else {
+
+            songList.innerHTML =
+                artist.songs.map(
+                    function(song) {
+
+                        return `
+
+                            <div class="profile-song">
+
+                                <div class="profile-song-cover">
+
+                                    <img
+                                        src="${song.cover}"
+                                        alt="${song.title}"
+                                    >
+
+                                </div>
+
+
+                                <div class="profile-song-info">
+
+                                    <strong>
+                                        ${song.title}
+                                    </strong>
+
+                                    <span>
+                                        ${song.streams} • ${song.duration}
+                                    </span>
+
+                                </div>
+
+
+                                <button
+                                    class="profile-play-btn"
+                                    data-audio="${song.audio}"
+                                    data-title="${song.title}"
+                                >
+                                    ▶
+                                </button>
+
+                            </div>
+
+                        `;
+
+                    }
+                ).join("");
+
+        }
+
+
+        // ========================================
+        // FOLLOW ARTIST
+        // ========================================
+
+        const followButton =
+            document.getElementById(
+                "profileFollowBtn"
+            );
+
+
+        const followKey =
+            "busiVibesFollowing_" +
+            artist.name;
+
+
+        function updateFollowButton() {
+
+            if (
+                localStorage.getItem(followKey)
+                === "true"
+            ) {
+
+                followButton.textContent =
+                    "✓ Following";
+
+                followButton.style.color =
+                    "#1a8f48";
+
+            } else {
+
+                followButton.textContent =
+                    "+ Follow";
+
+                followButton.style.color =
+                    "#8f00ff";
+
+            }
+
+        }
+
+
+        updateFollowButton();
+
+
+        followButton.addEventListener(
+            "click",
+            function() {
+
+                const isFollowing =
+                    localStorage.getItem(
+                        followKey
+                    )
+                    === "true";
+
+
+                if (isFollowing) {
+
+                    localStorage.removeItem(
+                        followKey
+                    );
+
+                } else {
+
+                    localStorage.setItem(
+                        followKey,
+                        "true"
+                    );
+
+                }
+
+
+                updateFollowButton();
+
+            }
+        );
+
+
+        // ========================================
+        // PLAY SONGS
+        // ========================================
+
+        const profilePlayButtons =
+            document.querySelectorAll(
+                ".profile-play-btn"
+            );
+
+
+        let profileAudio = null;
+
+
+        profilePlayButtons.forEach(
+            function(button) {
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+                        const audioFile =
+                            button.dataset.audio;
+
+
+                        if (profileAudio) {
+
+                            profileAudio.pause();
+
+                            profileAudio.currentTime =
+                                0;
+
+                        }
+
+
+                        profileAudio =
+                            new Audio(audioFile);
+
+
+                        profileAudio.play();
+
+
+                        profilePlayButtons.forEach(
+                            function(otherButton) {
+
+                                otherButton.textContent =
+                                    "▶";
+
+                            }
+                        );
+
+
+                        button.textContent =
+                            "⏸";
+
+
+                        profileAudio.addEventListener(
+                            "ended",
+                            function() {
+
+                                button.textContent =
+                                    "▶";
+
+                            }
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        // ========================================
+        // LOGOUT
+        // ========================================
+
+        const logoutButton =
+            document.querySelector(
+                ".logout"
+            );
+
+
+        if (logoutButton) {
+
+            logoutButton.addEventListener(
+                "click",
+                function(event) {
+
+                    event.preventDefault();
+
+
+                    localStorage.removeItem(
+                        "busiVibesLoggedIn"
+                    );
+
+
+                    localStorage.removeItem(
+                        "busiVibesCurrentUser"
+                    );
+
+
+                    window.location.href =
+                        "../login.html";
+
+                }
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```

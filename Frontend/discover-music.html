@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discover Music | BusiVibes</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+
+<body>
+
+    <div class="dashboard-container">
+
+
+        <!-- ===============================
+             SIDEBAR
+        ================================ -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <h2>BusiVibes</h2>
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="fan-dashboard.html" class="nav-link">
+                    🏠 Dashboard
+                </a>
+
+                <a href="discover-music.html" class="nav-link active">
+                    🎵 Discover Music
+                </a>
+
+                <a href="#" class="nav-link">
+                    ❤️ Liked Songs
+                </a>
+
+                <a href="downloads.html" class="nav-link">
+                    📥 Downloads
+                </a>
+
+                <a href="following-artists.html" class="nav-link">
+                    👥 Following Artists
+                </a>
+
+                <a href="my-playlists.html" class="nav-link">
+                    📀 My Playlists
+                </a>
+
+                <a href="#" class="nav-link">
+                    🎤 Artists
+                </a>
+
+                <a href="#" class="nav-link">
+                    📅 Events
+                </a>
+
+                <a href="#" class="nav-link">
+                    🛍️ Merchandise
+                </a>
+
+                <a href="#" class="nav-link">
+                    ⚙️ My Profile
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="nav-link logout">
+                    🚪 Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ===============================
+             MAIN CONTENT
+        ================================ -->
+
+        <main class="dashboard-main">
+
+
+            <!-- HEADER -->
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <h1>Discover Music 🎵</h1>
+
+                    <p>
+                        Discover new songs and artists on BusiVibes.
+                    </p>
+
+                </div>
+
+
+                <div class="user-info">
+
+                    <div class="user-avatar">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <strong id="fanName">
+                            Fan
+                        </strong>
+
+                        <span>
+                            Fan Account
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- ===============================
+                 SEARCH
+            ================================ -->
+
+            <section class="dashboard-section">
+
+                <div class="music-search">
+
+                    <input
+                        type="text"
+                        id="musicSearch"
+                        placeholder="Search songs, artists..."
+                    >
+
+                    <button id="searchButton">
+                        🔍 Search
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ===============================
+                 FEATURED MUSIC
+            ================================ -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Featured Music
+                    </h2>
+
+                </div>
+
+
+                <div class="music-grid">
+
+
+                    <!-- SONG 1 -->
+
+                   <div class="music-card" data-audio="assets/audio-files/Champion.mp3">
+
+                   
+
+
+                        <div class="music-cover">
+    <img src="assets/song-cover/Champion.png" alt="Champion cover">
+                        </div>
+
+                        <div class="music-info">
+
+                            <h3>
+                                Champion
+                            </h3>
+
+                            <p>
+                                Paul Beats
+                            </p>
+
+                        </div>
+
+                        <div class="music-actions">
+
+                            <button class="play-btn">
+                                ▶ Play
+                            </button>
+
+                            <button class="like-btn">
+                                ♡
+                            </button>
+
+                            <button class="download-btn">
+                                ↓
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SONG 2 -->
+
+                    <div class="music-card" data-audio="assets/audio-files/Rise Up.mp3">
+
+                        <div class="music-cover">
+    <img src="assets/song-cover/Rise Up.png" alt="Rise Up cover">
+                            
+                        </div>
+
+                        <div class="music-info">
+
+                            <h3>
+                                Rise Up
+                            </h3>
+
+                            <p>
+                                Paul Beats
+                            </p>
+
+                        </div>
+
+                        <div class="music-actions">
+
+                            <button class="play-btn">
+                                ▶ Play
+                            </button>
+
+                            <button class="like-btn">
+                                ♡
+                            </button>
+
+                            <button class="download-btn">
+                                ↓
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SONG 3 -->
+
+                    <div class="music-card" data-audio="assets/audio-files/Dream Big.mp3">
+
+                        <div class="music-cover">
+    <img src="assets/song-cover/Dream Big.png" alt="Dream Big cover">
+                            
+                        </div>
+
+                        <div class="music-info">
+
+                            <h3>
+                                Dream Big
+                            </h3>
+
+                            <p>
+                                Paul Beats
+                            </p>
+
+                        </div>
+
+                        <div class="music-actions">
+
+                            <button class="play-btn">
+                                ▶ Play
+                            </button>
+
+                            <button class="like-btn">
+                                ♡
+                            </button>
+
+                            <button class="download-btn">
+                                ↓
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SONG 4 -->
+<div class="music-card" data-audio="assets/audio-files/Forever.mp3">
+
+                        <div class="music-cover">
+                            <img src="assets/song-cover/Forever.png" alt="Forever cover">
+                        </div>
+
+                        <div class="music-info">
+
+                            <h3>
+                                Forever
+                            </h3>
+
+                            <p>
+                                Paul Beats
+                            </p>
+
+                        </div>
+
+                        <div class="music-actions">
+
+                            <button class="play-btn">
+                                ▶ Play
+                            </button>
+
+                            <button class="like-btn">
+                                ♡
+                            </button>
+
+                            <button class="download-btn">
+                                ↓
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ===============================
+                 POPULAR ARTISTS
+            ================================ -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Popular Artists
+                    </h2>
+
+                </div>
+
+
+                <div class="artists-grid">
+
+
+                    <div class="artist-card">
+
+                        <div class="artist-avatar">
+    <img src="assets/images/paul-beats.png" alt="Paul Beats">
+                            
+                        </div>
+
+                        <h3>
+                            Paul Beats
+                        </h3>
+
+                        <p>
+                            Afropop Artist
+                        </p>
+
+                        <button class="follow-btn">
+                            + Follow
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="artist-card">
+
+                        <div class="artist-avatar">
+    <img src="assets/images/artists2.jpg" alt="Decartella">
+</div>
+
+                        <h3>
+                            Decartella
+                        </h3>
+
+                        <p>
+                            Vocalist
+                        </p>
+
+                        <button class="follow-btn">
+                            + Follow
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="artist-card">
+
+                        <div class="artist-avatar">
+    <img src="assets/images/artists3.jpg" alt="Kofi Jamar">
+</div>
+
+                        <h3>
+                            Kofi Jamar
+                        </h3>
+
+                        <p>
+                            Afrobeats Artist
+                        </p>
+
+                        <button class="follow-btn">
+                            + Follow
+                        </button>
+
+                    </div>
+
+
+
+                    <div class="artist-card">
+
+                        <div class="artist-avatar">
+    <img src="assets/images/artists5.jpg" alt="Amaarae">
+</div>
+
+                        <h3>
+                            Amaarae
+                        </h3>
+
+                        <p>
+                            Afropop Artist
+                        </p>
+
+                        <button class="follow-btn">
+                            + Follow
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ===============================
+                 ALL MUSIC
+            ================================ -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Latest Music
+                    </h2>
+
+                </div>
+
+
+                <div id="musicResults">
+
+                  <div class="music-list-item" data-song="Champion" data-audio="assets/audio-files/Champion.mp3" data-cover="assets/song-cover/Champion.png">
+
+                        <div>
+
+                            <strong>
+                                Champion
+                            </strong>
+
+                            <p>
+                                Paul Beats • 3:45
+                            </p>
+
+                        </div>
+
+                        <button class="play-btn">
+                            ▶ Play
+                        </button>
+
+                    </div>
+
+
+                    <div class="music-list-item" data-song="Rise Up" data-audio="assets/audio-files/Rise Up.mp3" data-cover="assets/song-cover/Rise Up.png">
+
+                        <div>
+
+                            <strong>
+                                Rise Up
+                            </strong>
+
+                            <p>
+                                Paul Beats • 4:01
+                            </p>
+
+                        </div>
+
+                        <button class="play-btn">
+                            ▶ Play
+                        </button>
+
+                    </div>
+
+
+                    <div class="music-list-item" data-song="Dream Big" data-audio="assets/audio-files/Dream Big.mp3" data-cover="assets/song-cover/Dream Big.png">
+
+                        <div>
+
+                            <strong>
+                                Dream Big
+                            </strong>
+
+                            <p>
+                                Paul Beats • 2:58
+                            </p>
+
+                        </div>
+
+                        <button class="play-btn">
+                            ▶ Play
+                        </button>
+
+                    </div>
+
+
+                    <div class="music-list-item" data-song="Forever" data-audio="assets/audio-files/Forever.mp3" data-cover="assets/song-cover/Forever.png">
+
+                        <div>
+
+                            <strong>
+                                Forever
+                            </strong>
+
+                            <p>
+                                Paul Beats • 3:30
+                            </p>
+
+                        </div>
+
+                        <button class="play-btn">
+                            ▶ Play
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 BusiVibes. All Rights Reserved.
+                </p>
+
+            </footer>
+
+
+        </main>
+ <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 BusiVibes. All Rights Reserved.
+                </p>
+
+            </footer>
+
+
+        </main>
+
+    </div>
+    </div>
+
+    <div class="bottom-music-player" id="bottomMusicPlayer">
+
+       <div class="player-song-info">
+
+           <div class="player-cover">
+               🎵
+           </div>
+
+           <div class="player-details">
+
+               <strong id="playerSongTitle">
+                   No Song Playing
+               </strong>
+
+               <span id="playerArtistName">
+                   BusiVibes
+               </span>
+
+           </div>
+
+       </div>
+
+       <div class="player-controls">
+
+           <button id="previousSong" title="Previous Song">
+               ⏮
+           </button>
+
+           <button id="mainPlayButton" class="main-play-button" title="Play">
+               ▶
+           </button>
+
+           <button id="nextSong" title="Next Song">
+               ⏭
+           </button>
+
+       </div>
+
+       <div class="player-progress">
+
+           <span id="currentTime">
+               0:00
+           </span>
+
+           <input
+               type="range"
+               id="musicProgress"
+               min="0"
+               max="100"
+               value="0"
+           >
+
+           <span id="duration">
+               0:00
+           </span>
+
+       </div>
+
+       <div class="player-volume">
+
+           <span>
+               🔊
+           </span>
+
+           <input
+               type="range"
+               id="volumeControl"
+               min="0"
+               max="1"
+               step="0.01"
+               value="1"
+           >
+
+      
+
+    </div>
+
+    <!-- ===============================
+         FAN DASHBOARD SCRIPT
+    ================================ -->
+
+    <script>
+
+        // Get current user
+
+        const currentUser =
+            JSON.parse(
+                localStorage.getItem("busiVibesCurrentUser")
+            );
+
+
+        // Check login
+
+        if (!currentUser) {
+
+            window.location.href = "login.html";
+
+        } else {
+
+            document.getElementById("fanName").textContent =
+                currentUser.fullName;
+
+        }
+
+
+        // Logout
+
+        const logoutButton =
+            document.querySelector(".logout");
+
+
+        logoutButton.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+            localStorage.removeItem("busiVibesLoggedIn");
+
+            localStorage.removeItem("busiVibesCurrentUser");
+
+            window.location.href = "login.html";
+
+        });
+
+        // ========================================
+// DISCOVER MUSIC SEARCH
+// ========================================
+
+const musicSearch = document.getElementById("musicSearch");
+const searchButton = document.getElementById("searchButton");
+
+const musicCards = document.querySelectorAll(".music-card");
+const musicListItems = document.querySelectorAll(".music-list-item");
+
+function playLatestSong(item) {
+
+    const songTitle = item.querySelector("strong").textContent.trim();
+    const artistInfo = item.querySelector("p").textContent.trim();
+    const artistName = artistInfo.split("•")[0].trim();
+    const audioFile = item.dataset.audio;
+    const coverFile = item.dataset.cover || "assets/song-cover/Champion.png";
+
+    if (!audioFile) {
+        return;
+    }
+
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+    }
+
+    currentAudio = new Audio(audioFile);
+    currentAudio.volume = volumeControl.value;
+
+    playerSongTitle.textContent = songTitle;
+    playerArtistName.textContent = artistName;
+    playerCover.innerHTML = `<img src="${coverFile}" alt="${songTitle} cover">`;
+
+    musicProgress.value = 0;
+    currentTimeDisplay.textContent = "0:00";
+    durationDisplay.textContent = "0:00";
+
+    currentAudio.addEventListener("loadedmetadata", function() {
+        durationDisplay.textContent = formatTime(currentAudio.duration);
+    });
+
+    currentAudio.addEventListener("timeupdate", function() {
+        if (currentAudio.duration) {
+            musicProgress.value = (currentAudio.currentTime / currentAudio.duration) * 100;
+        }
+        currentTimeDisplay.textContent = formatTime(currentAudio.currentTime);
+    });
+
+    currentAudio.addEventListener("ended", function() {
+        mainPlayButton.textContent = "▶";
+        musicProgress.value = 100;
+        musicListItems.forEach(function(listItem) {
+            const button = listItem.querySelector(".play-btn");
+            if (button) {
+                button.textContent = "▶ Play";
+            }
+        });
+    });
+
+    musicCards.forEach(function(card) {
+        const cardButton = card.querySelector(".play-btn");
+        if (cardButton) {
+            cardButton.textContent = "▶ Play";
+        }
+    });
+
+    currentAudio.play()
+        .then(function() {
+            mainPlayButton.textContent = "⏸";
+            musicListItems.forEach(function(listItem) {
+                const button = listItem.querySelector(".play-btn");
+                if (!button) {
+                    return;
+                }
+
+                button.textContent = listItem === item ? "⏸ Pause" : "▶ Play";
+            });
+        })
+        .catch(function(error) {
+            console.error("Audio could not play:", error);
+            mainPlayButton.textContent = "▶";
+            alert("The song could not be played. Please check the MP3 file.");
+        });
+
+}
+
+function searchMusic() {
+
+    const searchTerm = musicSearch.value.toLowerCase().trim();
+
+    // Search Featured Music
+    musicCards.forEach(function(card) {
+
+        const songName =
+            card.querySelector("h3").textContent.toLowerCase();
+
+        const artistName =
+            card.querySelector(".music-info p").textContent.toLowerCase();
+
+        if (
+            songName.includes(searchTerm) ||
+            artistName.includes(searchTerm)
+        ) {
+            card.style.display = "";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+
+    // Search Latest Music
+    musicListItems.forEach(function(item) {
+
+        const musicText =
+            item.textContent.toLowerCase();
+
+        if (musicText.includes(searchTerm)) {
+            item.style.display = "flex";
+        } else {
+            item.style.display = "none";
+        }
+
+    });
+
+}
+
+
+// Search button
+searchButton.addEventListener("click", searchMusic);
+
+
+// Search while typing
+musicSearch.addEventListener("input", searchMusic);
+
+
+// Press Enter to search
+musicSearch.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+        searchMusic();
+    }
+
+});
+
+// ========================================
+// BUSIVIBES BOTTOM MUSIC PLAYER
+// ========================================
+
+const bottomPlayer = document.getElementById("bottomMusicPlayer");
+
+const playerSongTitle =
+    document.getElementById("playerSongTitle");
+
+const playerArtistName =
+    document.getElementById("playerArtistName");
+
+const playerCover =
+    document.querySelector(".player-cover");
+
+const mainPlayButton =
+    document.getElementById("mainPlayButton");
+
+const previousSong =
+    document.getElementById("previousSong");
+
+const nextSong =
+    document.getElementById("nextSong");
+
+const musicProgress =
+    document.getElementById("musicProgress");
+
+const currentTimeDisplay =
+    document.getElementById("currentTime");
+
+const durationDisplay =
+    document.getElementById("duration");
+
+const volumeControl =
+    document.getElementById("volumeControl");
+
+
+let currentAudio = null;
+let currentCardIndex = -1;
+
+
+// ========================================
+// FORMAT TIME
+// ========================================
+
+function formatTime(seconds) {
+
+    if (isNaN(seconds)) {
+        return "0:00";
+    }
+
+    const minutes = Math.floor(seconds / 60);
+
+    const remainingSeconds =
+        Math.floor(seconds % 60);
+
+    return (
+        minutes +
+        ":" +
+        String(remainingSeconds).padStart(2, "0")
+    );
+
+}
+
+
+// ========================================
+// LOAD SONG
+// ========================================
+
+function loadSong(index, shouldPlay = true) {
+
+    if (index < 0 || index >= musicCards.length) {
+        return;
+    }
+
+
+    const card = musicCards[index];
+
+    const audioFile =
+        card.dataset.audio;
+
+    const songTitle =
+        card.querySelector(".music-info h3")
+            .textContent
+            .trim();
+
+    const artistName =
+        card.querySelector(".music-info p")
+            .textContent
+            .trim();
+
+
+    // Stop previous song
+
+    if (currentAudio) {
+
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+
+    }
+
+
+    // Create new audio
+
+    currentAudio = new Audio(audioFile);
+
+    currentCardIndex = index;
+
+
+    // Update player information
+
+    playerSongTitle.textContent =
+        songTitle;
+
+    playerArtistName.textContent =
+        artistName;
+
+
+    // Update cover
+
+    const coverImage =
+        card.querySelector(".music-cover img");
+
+    if (coverImage) {
+
+        playerCover.innerHTML =
+            `<img src="${coverImage.src}" alt="${songTitle} cover">`;
+
+    } else {
+
+        playerCover.textContent = "🎵";
+
+    }
+
+
+    // Volume
+
+    currentAudio.volume =
+        volumeControl.value;
+
+
+    // Reset progress
+
+    musicProgress.value = 0;
+
+    currentTimeDisplay.textContent = "0:00";
+
+    durationDisplay.textContent = "0:00";
+
+
+    // Audio metadata loaded
+
+    currentAudio.addEventListener(
+        "loadedmetadata",
+        function() {
+
+            durationDisplay.textContent =
+                formatTime(currentAudio.duration);
+
+        }
+    );
+
+
+    // Update progress
+
+    currentAudio.addEventListener(
+        "timeupdate",
+        function() {
+
+            if (currentAudio.duration) {
+
+                const progress =
+                    (currentAudio.currentTime /
+                    currentAudio.duration) * 100;
+
+                musicProgress.value =
+                    progress;
+
+            }
+
+
+            currentTimeDisplay.textContent =
+                formatTime(currentAudio.currentTime);
+
+        }
+    );
+
+
+    // Song ended
+
+    currentAudio.addEventListener(
+        "ended",
+        function() {
+
+            mainPlayButton.textContent = "▶";
+
+            // Automatically play next song
+
+            if (
+                currentCardIndex <
+                musicCards.length - 1
+            ) {
+
+                loadSong(
+                    currentCardIndex + 1,
+                    true
+                );
+
+            } else {
+
+                musicProgress.value = 100;
+
+            }
+
+        }
+    );
+
+
+    // Play
+
+    if (shouldPlay) {
+
+        currentAudio.play()
+            .then(function() {
+
+                mainPlayButton.textContent =
+                    "⏸";
+
+            })
+            .catch(function(error) {
+
+                console.error(
+                    "Audio could not play:",
+                    error
+                );
+
+                mainPlayButton.textContent =
+                    "▶";
+
+                alert(
+                    "The song could not be played. " +
+                    "Please check the MP3 file."
+                );
+
+            });
+
+    }
+
+}
+
+
+// ========================================
+// FEATURED MUSIC PLAY BUTTONS
+// ========================================
+
+musicCards.forEach(function(card, index) {
+
+    const playButton =
+        card.querySelector(".play-btn");
+
+
+    playButton.addEventListener(
+        "click",
+        function() {
+
+            // If this song is currently loaded
+
+            if (
+                currentCardIndex === index &&
+                currentAudio
+            ) {
+
+                if (currentAudio.paused) {
+
+                    currentAudio.play();
+
+                    mainPlayButton.textContent =
+                        "⏸";
+
+                    playButton.textContent =
+                        "⏸ Pause";
+
+                } else {
+
+                    currentAudio.pause();
+
+                    mainPlayButton.textContent =
+                        "▶";
+
+                    playButton.textContent =
+                        "▶ Play";
+
+                }
+
+                return;
+
+            }
+
+
+            // Reset previous card button
+
+            musicCards.forEach(function(otherCard) {
+
+                otherCard.querySelector(
+                    ".play-btn"
+                ).textContent = "▶ Play";
+
+            });
+
+            musicListItems.forEach(function(listItem) {
+                const listButton = listItem.querySelector(".play-btn");
+                if (listButton) {
+                    listButton.textContent = "▶ Play";
+                }
+            });
+
+
+            // Load selected song
+
+            loadSong(index, true);
+
+            playButton.textContent =
+                "⏸ Pause";
+
+        }
+    );
+
+});
+
+// ========================================
+// LATEST MUSIC PLAY BUTTONS
+// ========================================
+
+const latestMusicItems =
+    document.querySelectorAll(".music-list-item");
+
+
+latestMusicItems.forEach(function(item) {
+
+    const playButton =
+        item.querySelector(".play-btn");
+
+    const songName =
+        item.dataset.song;
+
+
+    playButton.addEventListener("click", function() {
+
+        const songIndex =
+            Array.from(musicCards).findIndex(function(card) {
+
+                return card.querySelector(
+                    ".music-info h3"
+                ).textContent.trim() === songName;
+
+            });
+
+
+        if (songIndex !== -1) {
+
+            loadSong(songIndex, true);
+
+            // Reset all Featured Music buttons
+
+            musicCards.forEach(function(card) {
+
+                card.querySelector(
+                    ".play-btn"
+                ).textContent = "▶ Play";
+
+            });
+
+
+            // Update selected Featured Music button
+
+            musicCards[songIndex]
+                .querySelector(".play-btn")
+                .textContent = "⏸ Pause";
+
+
+            // Update Latest Music buttons
+
+            latestMusicItems.forEach(function(otherItem) {
+
+                otherItem.querySelector(
+                    ".play-btn"
+                ).textContent = "▶ Play";
+
+            });
+
+
+            playButton.textContent =
+                "⏸ Pause";
+
+        }
+
+    });
+
+});
+
+
+// ========================================
+// MAIN PLAYER PLAY / PAUSE
+// ========================================
+
+mainPlayButton.addEventListener(
+    "click",
+    function() {
+
+        if (!currentAudio) {
+
+            loadSong(0, true);
+
+            return;
+
+        }
+
+
+        if (currentAudio.paused) {
+
+            currentAudio.play();
+
+            mainPlayButton.textContent =
+                "⏸";
+
+            musicCards[currentCardIndex]
+                .querySelector(".play-btn")
+                .textContent = "⏸ Pause";
+
+        } else {
+
+            currentAudio.pause();
+
+            mainPlayButton.textContent =
+                "▶";
+
+            musicCards[currentCardIndex]
+                .querySelector(".play-btn")
+                .textContent = "▶ Play";
+
+        }
+
+    }
+);
+
+
+// ========================================
+// PREVIOUS SONG
+// ========================================
+
+previousSong.addEventListener(
+    "click",
+    function() {
+
+        if (currentCardIndex > 0) {
+
+            loadSong(
+                currentCardIndex - 1,
+                true
+            );
+
+        }
+
+    }
+);
+
+
+// ========================================
+// NEXT SONG
+// ========================================
+
+nextSong.addEventListener(
+    "click",
+    function() {
+
+        if (
+            currentCardIndex <
+            musicCards.length - 1
+        ) {
+
+            loadSong(
+                currentCardIndex + 1,
+                true
+            );
+
+        }
+
+    }
+);
+
+
+// ========================================
+// PROGRESS BAR
+// ========================================
+
+musicProgress.addEventListener(
+    "input",
+    function() {
+
+        if (currentAudio && currentAudio.duration) {
+
+            currentAudio.currentTime =
+                (musicProgress.value / 100) *
+                currentAudio.duration;
+
+        }
+
+    }
+);
+
+
+// ========================================
+// VOLUME
+// ========================================
+
+volumeControl.addEventListener(
+    "input",
+    function() {
+
+        if (currentAudio) {
+
+            currentAudio.volume =
+                volumeControl.value;
+
+        }
+
+    }
+);
+// ========================================
+// SAVE MUSIC LIKES
+// ========================================
+
+const likeButtons = document.querySelectorAll(".like-btn");
+
+likeButtons.forEach(function(button) {
+
+    const musicCard = button.closest(".music-card");
+    const songName = musicCard.querySelector(".music-info h3").textContent.trim();
+
+    const likeKey = "busiVibesLiked_" + songName;
+
+    // Restore saved like
+    if (localStorage.getItem(likeKey) === "true") {
+        button.textContent = "♥";
+        button.classList.add("liked");
+    }
+
+    // Like / Unlike
+    button.addEventListener("click", function() {
+
+        const isLiked = localStorage.getItem(likeKey) === "true";
+
+        if (isLiked) {
+
+            localStorage.removeItem(likeKey);
+
+            button.textContent = "♡";
+            button.classList.remove("liked");
+
+        } else {
+
+            localStorage.setItem(likeKey, "true");
+
+            button.textContent = "♥";
+            button.classList.add("liked");
+
+        }
+
+    });
+
+});
+
+// ========================================
+// DISCOVER MUSIC DOWNLOAD BUTTONS
+// ========================================
+
+const downloadButtons = document.querySelectorAll(".download-btn");
+
+downloadButtons.forEach(function(button) {
+
+    button.addEventListener("click", function(event) {
+
+        event.preventDefault();
+
+        const musicCard = button.closest(".music-card");
+
+        if (!musicCard) return;
+
+        const songName =
+            musicCard.querySelector(".music-info h3").textContent.trim();
+
+        const artistName =
+            musicCard.querySelector(".music-info p").textContent.trim();
+
+        const audioFile =
+            musicCard.getAttribute("data-audio");
+
+        const imageElement =
+            musicCard.querySelector(".music-cover img");
+
+        const songImage =
+            imageElement ? imageElement.getAttribute("src") : "";
+
+        // Get existing downloads
+        let downloads =
+            JSON.parse(localStorage.getItem("busiVibesDownloads")) || [];
+
+        // Check if already downloaded
+        const alreadyDownloaded = downloads.some(function(song) {
+            return song.title === songName;
+        });
+
+        if (alreadyDownloaded) {
+
+            alert(
+                songName +
+                " is already in your Downloads."
+            );
+
+            return;
+        }
+
+        // Add song to Downloads
+        const newDownload = {
+
+            id: Date.now(),
+
+            title: songName,
+
+            artist: artistName,
+
+            duration: "Music",
+
+            size: "Downloaded",
+
+            date: "Downloaded today",
+
+            image: songImage,
+
+            audio: audioFile,
+
+            downloadUrl: audioFile
+
+        };
+
+        downloads.push(newDownload);
+
+        // Save Downloads
+        localStorage.setItem(
+            "busiVibesDownloads",
+            JSON.stringify(downloads)
+        );
+
+        alert(
+            "✅ " +
+            songName +
+            " has been added to your Downloads!"
+        );
+
+    });
+
+});
+// ========================================
+// SAVE FOLLOWED ARTISTS
+// ========================================
+
+const followButtons = document.querySelectorAll(".follow-btn");
+
+followButtons.forEach(function(button) {
+
+    const artistCard = button.closest(".artist-card");
+    const artistName = artistCard.querySelector("h3").textContent.trim();
+
+    const followKey = "busiVibesFollowing_" + artistName;
+
+    // Restore saved follow
+    if (localStorage.getItem(followKey) === "true") {
+
+        button.textContent = "✓ Following";
+        button.classList.add("following");
+
+    }
+
+    // Follow / Unfollow
+    button.addEventListener("click", function() {
+
+        const isFollowing =
+            localStorage.getItem(followKey) === "true";
+
+        if (isFollowing) {
+
+            localStorage.removeItem(followKey);
+
+            button.textContent = "+ Follow";
+            button.classList.remove("following");
+
+        } else {
+
+            localStorage.setItem(followKey, "true");
+
+            button.textContent = "✓ Following";
+            button.classList.add("following");
+
+        }
+
+    });
+
+});
+    </script>
+
+
+</body>
+
+</html>

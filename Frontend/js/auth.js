@@ -271,15 +271,29 @@ loginForm.addEventListener("submit", function (event) {
     loginForm.reset();
 
 
-    // Redirect after successful login
+       // Redirect after successful login
     setTimeout(() => {
 
-        const userType = String(savedUser.accountType || "fan").toLowerCase();
+        const userType =
+            String(savedUser.accountType || "")
+                .trim()
+                .toLowerCase();
+
 
         if (userType === "artist") {
+
             window.location.href = "pages/artist-dashboard.html";
-        } else {
+
+        } 
+        else if (userType === "fan") {
+
+            window.location.href = "fan-dashboard.html";
+
+        } 
+        else {
+
             window.location.href = "index.html";
+
         }
 
     }, 1200);

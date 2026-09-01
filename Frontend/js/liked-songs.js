@@ -201,13 +201,19 @@ function renderLikedSongs() {
 
   if (!likedSongsList) return;
 
-  if (songs.length === 0) {
-    if (emptyState) emptyState.style.display = "block";
-    return;
+  if (emptyState) {
+    emptyState.style.display = "none";
   }
 
-  if (emptyState) emptyState.style.display = "none";
   likedSongsList.innerHTML = "";
+
+  if (songs.length === 0) {
+    if (emptyState) {
+      emptyState.style.display = "block";
+      likedSongsList.appendChild(emptyState);
+    }
+    return;
+  }
 
   songs.forEach((song, index) => {
     const card = document.createElement("div");

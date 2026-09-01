@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Following Artists | BusiVibes</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                <h2>BusiVibes</h2>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="fan-dashboard.html" class="nav-link">
+                    🏠 Dashboard
+                </a>
+
+                <a href="discover-music.html" class="nav-link">
+                    🎵 Discover Music
+                </a>
+
+                <a href="liked-songs.html" class="nav-link">
+                    ❤️ Liked Songs
+                </a>
+
+                <a href="downloads.html" class="nav-link">
+                    📥 Downloads
+                </a>
+
+                <a href="following-artists.html" class="nav-link active">
+                    👥 Following Artists
+                </a>
+
+                <a href="my-playlists.html" class="nav-link">
+                    📀 My Playlists
+                </a>
+
+                <a href="#" class="nav-link">
+                    🎤 Artists
+                </a>
+
+                <a href="#" class="nav-link">
+                    📅 Events
+                </a>
+
+                <a href="#" class="nav-link">
+                    🛍️ Merchandise
+                </a>
+
+                <a href="#" class="nav-link">
+                    ⚙️ My Profile
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="nav-link logout">
+                    🚪 Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-header">
+
+                <div>
+
+                    <h1>
+                        Following Artists 👥
+                    </h1>
+
+                    <p>
+                        Artists you follow on BusiVibes.
+                    </p>
+
+                </div>
+
+                <div class="user-info">
+
+                    <div class="user-avatar">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <strong id="fanName">
+                            Fan
+                        </strong>
+
+                        <span>
+                            Fan Account
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- FOLLOWING ARTISTS -->
+
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        My Artists
+                    </h2>
+
+                </div>
+
+                <div class="artists-grid" id="followingArtists">
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 BusiVibes. All Rights Reserved.
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script>
+
+        // ========================================
+        // CURRENT USER
+        // ========================================
+
+        const currentUser =
+            JSON.parse(
+                localStorage.getItem("busiVibesCurrentUser")
+            );
+
+        if (!currentUser) {
+
+            window.location.href = "login.html";
+
+        } else {
+
+            document.getElementById("fanName").textContent =
+                currentUser.fullName;
+
+        }
+
+
+        // ========================================
+        // ARTISTS
+        // ========================================
+
+        const artists = [
+
+            {
+                name: "Paul Beats",
+                genre: "Afropop Artist",
+                image: "assets/images/paul-beats.png"
+            },
+
+            {
+                name: "Decartella",
+                genre: "Vocalist",
+                image: "assets/images/artists2.jpg"
+            },
+
+            {
+                name: "Kofi Jamar",
+                genre: "Afrobeats Artist",
+                image: "assets/images/artists3.jpg"
+            },
+
+            {
+                name: "Amaarae",
+                genre: "Afropop Artist",
+                image: "assets/images/artists5.jpg"
+            }
+
+        ];
+
+
+        // ========================================
+        // DISPLAY FOLLOWING ARTISTS
+        // ========================================
+
+        function renderFollowingArtists() {
+
+            const container =
+                document.getElementById("followingArtists");
+
+            const followedArtists =
+                artists.filter(function(artist) {
+
+                    return (
+                        localStorage.getItem(
+                            "busiVibesFollowing_" +
+                            artist.name
+                        ) === "true"
+                    );
+
+                });
+
+
+            if (followedArtists.length === 0) {
+
+                container.innerHTML = `
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            👥
+                        </div>
+
+                        <h3>
+                            No artists followed yet
+                        </h3>
+
+                        <p>
+                            Follow your favorite artists
+                            from Discover Music.
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+
+            container.innerHTML =
+                followedArtists.map(function(artist) {
+
+                    return `
+
+                        <div class="artist-card">
+
+                            <div class="artist-avatar">
+
+                                <img
+                                    src="${artist.image}"
+                                    alt="${artist.name}"
+                                >
+
+                            </div>
+
+                            <h3>
+                                ${artist.name}
+                            </h3>
+
+                            <p>
+                                ${artist.genre}
+                            </p>
+
+                            <button
+                                class="follow-btn following"
+                                data-artist="${artist.name}"
+                            >
+                                ✓ Following
+                            </button>
+
+                        </div>
+
+                    `;
+
+                }).join("");
+
+
+            // ========================================
+            // UNFOLLOW
+            // ========================================
+
+            const unfollowButtons =
+                document.querySelectorAll(".follow-btn");
+
+
+            unfollowButtons.forEach(function(button) {
+
+                button.addEventListener("click", function() {
+
+                    const artistName =
+                        button.dataset.artist;
+
+                    localStorage.removeItem(
+                        "busiVibesFollowing_" +
+                        artistName
+                    );
+
+                    renderFollowingArtists();
+
+                });
+
+            });
+
+        }
+
+
+        // ========================================
+        // LOGOUT
+        // ========================================
+
+        const logoutButton =
+            document.querySelector(".logout");
+
+        logoutButton.addEventListener(
+            "click",
+            function(event) {
+
+                event.preventDefault();
+
+                localStorage.removeItem(
+                    "busiVibesLoggedIn"
+                );
+
+                localStorage.removeItem(
+                    "busiVibesCurrentUser"
+                );
+
+                window.location.href =
+                    "login.html";
+
+            }
+        );
+
+
+        // ========================================
+        // START
+        // ========================================
+
+        renderFollowingArtists();
+
+    </script>
+
+</body>
+
+</html>

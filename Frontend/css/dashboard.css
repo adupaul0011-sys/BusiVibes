@@ -1300,3 +1300,123 @@ body {
     object-fit: cover;
     display: block;
 }
+/* ========================================
+   BUSIVIBES MOBILE MUSIC PLAYER
+======================================== */
+
+@media (max-width: 768px) {
+
+    .bottom-music-player {
+        height: auto;
+        min-height: 100px;
+        padding: 10px 15px;
+
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+    }
+
+
+    /* SONG INFORMATION */
+
+    .player-song-info {
+        min-width: 0;
+    }
+
+    .player-cover {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+    }
+
+    .player-details {
+        min-width: 0;
+    }
+
+    .player-details strong {
+        font-size: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .player-details span {
+        font-size: 11px;
+    }
+
+
+    /* PLAYER CONTROLS */
+
+    .player-controls {
+        gap: 8px;
+    }
+
+    .player-controls button {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+
+    .main-play-button {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+
+    /* PROGRESS AREA */
+
+    .player-progress {
+        grid-column: 1 / -1;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .player-progress span {
+        font-size: 10px;
+        min-width: 28px;
+    }
+
+    #musicProgress {
+        width: 100%;
+    }
+
+
+    /* VOLUME */
+
+    .player-volume {
+        display: none;
+    }
+
+}
+
+
+/* ========================================
+   EXTRA SMALL PHONES
+======================================== */
+
+@media (max-width: 480px) {
+
+    .bottom-music-player {
+        padding: 8px 10px;
+    }
+
+    .player-cover {
+        width: 45px;
+        height: 45px;
+    }
+
+    .player-controls button {
+        width: 28px;
+        height: 28px;
+    }
+
+    .main-play-button {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .player-details strong {
+        font-size: 12px;
+    }
+
+}
