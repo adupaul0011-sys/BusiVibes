@@ -971,6 +971,39 @@ body {
     transform: translateY(-2px);
 }
 
+.follow-btn.following {
+   background: #1f9d55;
+}
+
+.follow-btn.following:hover {
+   background: #177a44;
+}
+
+.artist-card-actions {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   flex-wrap: wrap;
+}
+
+.view-artist-btn {
+   border: 1px solid #8f00ff;
+   background: #ffffff;
+   color: #8f00ff;
+   padding: 9px 18px;
+   border-radius: 20px;
+   font-size: 13px;
+   font-weight: bold;
+   cursor: pointer;
+   transition: 0.3s ease;
+}
+
+.view-artist-btn:hover {
+   background: #f5eaff;
+   transform: translateY(-2px);
+}
+
 
 /* =====================================================
    LATEST MUSIC
@@ -1419,4 +1452,116 @@ body {
         font-size: 12px;
     }
 
+}
+ /* ==========================================
+    BUSIVIBES UPLOAD SONG FORM
+    ========================================== */
+
+#uploadSongSection {
+    margin-top: 25px;
+}
+
+#uploadSongForm {
+    max-width: 700px;
+    padding: 25px;
+    background: #151522;
+    border: 1px solid #2d2d40;
+    border-radius: 15px;
+    color: #ffffff;
+}
+
+/* Form groups */
+#uploadSongForm > div {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+#uploadSongForm label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* Text inputs */
+#uploadSongForm input[type="text"] {
+    width: 100%;
+    padding: 13px 14px;
+    background: #0d0d16;
+    color: #ffffff;
+    border: 1px solid #3a3a50;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#uploadSongForm input[type="text"]::placeholder {
+    color: #9999aa;
+}
+
+#uploadSongForm input[type="text"]:focus {
+    border-color: #7c3aed;
+}
+
+/* File inputs */
+#uploadSongForm input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    background: #0d0d16;
+    color: #ffffff;
+    border: 1px solid #3a3a50;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Checkbox */
+#uploadSongForm input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+/* Checkbox label */
+#uploadSongForm div:has(input[type="checkbox"]) label {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+/* Buttons */
+#uploadSongForm button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Upload button */
+#uploadSongForm button[type="submit"] {
+    background: #7c3aed;
+    color: #ffffff;
+}
+
+#uploadSongForm button[type="submit"]:hover {
+    background: #6d28d9;
+}
+
+/* Cancel button */
+#uploadSongForm #cancelUploadBtn {
+    background: #30303d;
+    color: #ffffff;
+}
+
+#uploadSongForm #cancelUploadBtn:hover {
+    background: #414152;
+}
+
+/* Message */
+#uploadMessage {
+    margin-top: 15px;
+    color: #a78bfa;
+    font-weight: 600;
 }

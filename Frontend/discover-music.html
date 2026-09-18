@@ -11,6 +11,60 @@
 
     <link rel="stylesheet" href="css/dashboard.css">
 
+    <style>
+
+        .artist-slider {
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 18px 12px 12px;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+        }
+
+        .artist-slider-track {
+            display: flex;
+            transition: transform 0.35s ease;
+        }
+
+        .artist-slide {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .artist-slider-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .artist-slide-dot {
+            width: 10px;
+            height: 10px;
+            border: none;
+            border-radius: 50%;
+            background: #d7d7d7;
+            cursor: pointer;
+            transition: 0.2s ease;
+            padding: 0;
+        }
+
+        .artist-slide-dot.active {
+            background: #8f00ff;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 700px) {
+            .artist-slide {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
 </head>
 
 
@@ -358,94 +412,143 @@
                 </div>
 
 
-                <div class="artists-grid">
+                <div class="artist-slider" aria-label="Popular artists carousel">
 
+                    <div class="artist-slider-track" id="artistSliderTrack">
 
-                    <div class="artist-card">
+                        <div class="artist-slide">
 
-                        <div class="artist-avatar">
-    <img src="assets/images/paul-beats.png" alt="Paul Beats">
-                            
+                            <div class="artist-card">
+
+                                <div class="artist-avatar">
+                                    <img src="assets/images/paul-beats.png" alt="Paul Beats">
+                                </div>
+
+                                <h3>
+                                    Paul Beats
+                                </h3>
+
+                                <p>
+                                    Afropop Artist
+                                </p>
+
+                                <button class="follow-btn">
+                                    + Follow
+                                </button>
+
+                            </div>
+
+                            <div class="artist-card">
+
+                                <div class="artist-avatar">
+                                    <img src="assets/images/artists2.jpg" alt="Decartella">
+                                </div>
+
+                                <h3>
+                                    Decartella
+                                </h3>
+
+                                <p>
+                                    Vocalist
+                                </p>
+
+                                <button class="follow-btn">
+                                    + Follow
+                                </button>
+
+                            </div>
+
+                            <div class="artist-card">
+
+                                <div class="artist-avatar">
+                                    <img src="assets/images/artists3.jpg" alt="Kofi Jamar">
+                                </div>
+
+                                <h3>
+                                    Kofi Jamar
+                                </h3>
+
+                                <p>
+                                    Afrobeats Artist
+                                </p>
+
+                                <button class="follow-btn">
+                                    + Follow
+                                </button>
+
+                            </div>
+
                         </div>
 
-                        <h3>
-                            Paul Beats
-                        </h3>
+                        <div class="artist-slide">
 
-                        <p>
-                            Afropop Artist
-                        </p>
+                            <div class="artist-card">
 
-                        <button class="follow-btn">
-                            + Follow
-                        </button>
+                                <div class="artist-avatar">
+                                    <img src="assets/images/artists4.jpg" alt="Lyrical Kings">
+                                </div>
+
+                                <h3>
+                                    Lyrical Kings
+                                </h3>
+
+                                <p>
+                                    Group
+                                </p>
+
+                                <button class="follow-btn">
+                                    + Follow
+                                </button>
+
+                            </div>
+
+                            <div class="artist-card">
+
+                                <div class="artist-avatar">
+                                    <img src="assets/images/artists5.jpg" alt="Amaarae">
+                                </div>
+
+                                <h3>
+                                    Amaarae
+                                </h3>
+
+                                <p>
+                                    Afropop Artist
+                                </p>
+
+                                <button class="follow-btn">
+                                    + Follow
+                                </button>
+
+                            </div>
+
+                            <div class="artist-card">
+
+                                <div class="artist-avatar">
+                                    <img src="assets/images/artists6.jpg" alt="Black Tunez">
+                                </div>
+
+                                <h3>
+                                    Black Tunez
+                                </h3>
+
+                                <p>
+                                    Producer
+                                </p>
+
+                                <button class="follow-btn">
+                                    + Follow
+                                </button>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
-
-
-                    <div class="artist-card">
-
-                        <div class="artist-avatar">
-    <img src="assets/images/artists2.jpg" alt="Decartella">
-</div>
-
-                        <h3>
-                            Decartella
-                        </h3>
-
-                        <p>
-                            Vocalist
-                        </p>
-
-                        <button class="follow-btn">
-                            + Follow
-                        </button>
-
-                    </div>
-
-
-
-                    <div class="artist-card">
-
-                        <div class="artist-avatar">
-    <img src="assets/images/artists3.jpg" alt="Kofi Jamar">
-</div>
-
-                        <h3>
-                            Kofi Jamar
-                        </h3>
-
-                        <p>
-                            Afrobeats Artist
-                        </p>
-
-                        <button class="follow-btn">
-                            + Follow
-                        </button>
-
-                    </div>
-
-
-
-                    <div class="artist-card">
-
-                        <div class="artist-avatar">
-    <img src="assets/images/artists5.jpg" alt="Amaarae">
-</div>
-
-                        <h3>
-                            Amaarae
-                        </h3>
-
-                        <p>
-                            Afropop Artist
-                        </p>
-
-                        <button class="follow-btn">
-                            + Follow
-                        </button>
-
+                    <div class="artist-slider-dots" id="artistSliderDots">
+                        <button class="artist-slide-dot active" data-index="0" type="button" aria-label="Show slide 1"></button>
+                        <button class="artist-slide-dot" data-index="1" type="button" aria-label="Show slide 2"></button>
                     </div>
 
                 </div>
@@ -1565,6 +1668,39 @@ followButtons.forEach(function(button) {
     });
 
 });
+
+    const artistSliderTrack = document.getElementById("artistSliderTrack");
+    const artistSliderDots = document.querySelectorAll(".artist-slide-dot");
+    const artistSlides = document.querySelectorAll(".artist-slide");
+    let currentArtistSlide = 0;
+
+    function showArtistSlide(index) {
+
+        if (!artistSliderTrack || !artistSlides.length) return;
+
+        currentArtistSlide = (index + artistSlides.length) % artistSlides.length;
+
+        artistSliderTrack.style.transform = "translateX(-" + (currentArtistSlide * 100) + "% )";
+
+        artistSliderDots.forEach(function(dot) {
+            const isActive = Number(dot.dataset.index) === currentArtistSlide;
+            dot.classList.toggle("active", isActive);
+        });
+
+    }
+
+    artistSliderDots.forEach(function(dot) {
+        dot.addEventListener("click", function() {
+            showArtistSlide(Number(dot.dataset.index));
+        });
+    });
+
+    if (artistSlides.length > 1) {
+        setInterval(function() {
+            showArtistSlide(currentArtistSlide + 1);
+        }, 5000);
+    }
+
     </script>
 
 

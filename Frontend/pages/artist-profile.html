@@ -487,6 +487,8 @@
     </div>
 
 
+    <script src="../busivibes-data.js"></script>
+
     <script>
 
         // ========================================
@@ -533,37 +535,24 @@
         // ARTIST DATABASE
         // ========================================
 
-        const artists = {
-
+        const artists = (
+            window.BusiVibesData &&
+            window.BusiVibesData.artistProfiles
+        ) || {
             "paul-beats": {
-
                 name: "Paul Beats",
-
                 genre: "Afropop Artist",
-
                 image: "../assets/images/paul-beats.png",
-
                 followers: "22K",
-
                 streams: "1.2M",
-
-                about:
-                    "Paul Beats is an Afropop artist bringing energetic melodies, meaningful lyrics and modern African sounds to music lovers around the world.",
-
+                about: "Paul Beats is an Afropop artist bringing energetic melodies, meaningful lyrics and modern African sounds to music lovers around the world.",
                 socials: {
-
                     Instagram: "#",
-
                     TikTok: "#",
-
                     YouTube: "#",
-
                     X: "#"
-
                 },
-
                 songs: [
-
                     {
                         title: "Champion",
                         streams: "2.1M Streams",
@@ -571,7 +560,6 @@
                         cover: "../assets/song-cover/Champion.png",
                         audio: "../assets/audio-files/Champion.mp3"
                     },
-
                     {
                         title: "Rise Up",
                         streams: "1.4M Streams",
@@ -579,7 +567,6 @@
                         cover: "../assets/song-cover/Rise Up.png",
                         audio: "../assets/audio-files/Rise Up.mp3"
                     },
-
                     {
                         title: "Dream Big",
                         streams: "900K Streams",
@@ -587,7 +574,6 @@
                         cover: "../assets/song-cover/Dream Big.png",
                         audio: "../assets/audio-files/Dream Big.mp3"
                     },
-
                     {
                         title: "Forever",
                         streams: "500K Streams",
@@ -595,171 +581,83 @@
                         cover: "../assets/song-cover/Forever.png",
                         audio: "../assets/audio-files/Forever.mp3"
                     }
-
                 ]
-
             },
-
-
             "decartella": {
-
                 name: "Decartella",
-
                 genre: "Vocalist",
-
                 image: "../assets/images/artists2.jpg",
-
                 followers: "18K",
-
                 streams: "950K",
-
-                about:
-                    "Decartella is a talented vocalist known for powerful performances, emotional melodies and a unique African sound.",
-
+                about: "Decartella is a talented vocalist known for powerful performances, emotional melodies and a unique African sound.",
                 socials: {
-
                     Instagram: "#",
-
                     TikTok: "#",
-
                     YouTube: "#",
-
                     X: "#"
-
                 },
-
                 songs: []
-
             },
-
-
             "kofi-jamar": {
-
                 name: "Kofi Jamar",
-
                 genre: "Afrobeats Artist",
-
                 image: "../assets/images/artists3.jpg",
-
                 followers: "31K",
-
                 streams: "2.4M",
-
-                about:
-                    "Kofi Jamar is an Afrobeats artist creating energetic music inspired by modern African culture and everyday experiences.",
-
+                about: "Kofi Jamar is an Afrobeats artist creating energetic music inspired by modern African culture and everyday experiences.",
                 socials: {
-
                     Instagram: "#",
-
                     TikTok: "#",
-
                     YouTube: "#",
-
                     X: "#"
-
                 },
-
                 songs: []
-
             },
-
-
             "lyrical-kings": {
-
                 name: "Lyrical Kings",
-
                 genre: "Group",
-
                 image: "../assets/images/artists4.jpg",
-
                 followers: "27K",
-
                 streams: "1.8M",
-
-                about:
-                    "Lyrical Kings is a talented music group delivering powerful lyrics, creative sounds and memorable performances.",
-
+                about: "Lyrical Kings is a talented music group delivering powerful lyrics, creative sounds and memorable performances.",
                 socials: {
-
                     Instagram: "#",
-
                     TikTok: "#",
-
                     YouTube: "#",
-
                     X: "#"
-
                 },
-
                 songs: []
-
             },
-
-
             "amaarae": {
-
                 name: "Amaarae",
-
                 genre: "Afropop Artist",
-
                 image: "../assets/images/artists5.jpg",
-
                 followers: "45K",
-
                 streams: "3.1M",
-
-                about:
-                    "Amaarae is an Afropop artist bringing a fresh sound, creative energy and distinctive style to modern African music.",
-
+                about: "Amaarae is an Afropop artist bringing a fresh sound, creative energy and distinctive style to modern African music.",
                 socials: {
-
                     Instagram: "#",
-
                     TikTok: "#",
-
                     YouTube: "#",
-
                     X: "#"
-
                 },
-
                 songs: []
-
             },
-
-
             "black-tunez": {
-
                 name: "Black Tunez",
-
                 genre: "Producer",
-
                 image: "../assets/images/artists6.jpg",
-
                 followers: "15K",
-
                 streams: "780K",
-
-                about:
-                    "Black Tunez is a creative producer focused on crafting modern African sounds and helping artists bring their musical ideas to life.",
-
+                about: "Black Tunez is a creative producer focused on crafting modern African sounds and helping artists bring their musical ideas to life.",
                 socials: {
-
                     Instagram: "#",
-
                     TikTok: "#",
-
                     YouTube: "#",
-
                     X: "#"
-
                 },
-
                 songs: []
-
             }
-
         };
 
 

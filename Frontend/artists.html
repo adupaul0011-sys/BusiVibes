@@ -293,7 +293,9 @@
     </div>
 
 
-    <script>
+   <script src="busivibes-data.js"></script>
+
+   <script>
 
    // ========================================
    // CURRENT USER
@@ -337,44 +339,46 @@
    // BUSIVIBES ARTISTS
    // ========================================
 
-   const artists = [
-
+   const artists = (
+       window.BusiVibesData &&
+       window.BusiVibesData.artists
+   ) || [
        {
+           slug: "paul-beats",
            name: "Paul Beats",
            genre: "Afropop Artist",
            image: "assets/images/paul-beats.png"
        },
-
        {
+           slug: "decartella",
            name: "Decartella",
            genre: "Vocalist",
            image: "assets/images/artists2.jpg"
        },
-
        {
+           slug: "kofi-jamar",
            name: "Kofi Jamar",
            genre: "Afrobeats Artist",
            image: "assets/images/artists3.jpg"
        },
-
        {
+           slug: "lyrical-kings",
            name: "Lyrical Kings",
            genre: "Group",
            image: "assets/images/artists4.jpg"
        },
-
        {
+           slug: "amaarae",
            name: "Amaarae",
            genre: "Afropop Artist",
            image: "assets/images/artists5.jpg"
        },
-
        {
+           slug: "black-tunez",
            name: "Black Tunez",
            genre: "Producer",
            image: "assets/images/artists6.jpg"
        }
-
    ];
 
    // ========================================

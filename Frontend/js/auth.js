@@ -57,11 +57,44 @@ const initialMode = urlParams.get("mode") === "signup" ? "signup" : "login";
 setMode(initialMode);
 
 
+const API_BASE = "http://localhost:4000/api";
+
+async function requestAuth(path, body) {
+    const response = await fetch(`${API_BASE}${path}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+        throw new Error(data.error || "Authentication failed.");
+    }
+    return data;
+}
+
+function usernameFromEmail(email) {
+    return email.split("@")[0].replace(/[^a-z0-9_]/g, "").slice(0, 24) || "listener";
+}
+
+function saveSession(data) {
+    localStorage.setItem("bv_token", data.token);
+    localStorage.setItem("busiVibesLoggedIn", "true");
+    localStorage.setItem("busiVibesCurrentUser", JSON.stringify({
+        id: data.user.id,
+        fullName: data.user.displayName,
+        email: data.user.username,
+        accountType: data.user.type,
+        userType: data.user.type,
+        username: data.user.username
+    }));
+    localStorage.setItem("bv_current_user_id", String(data.user.id));
+}
+
 // ===============================
 // SIGN UP
 // ===============================
 
-signupForm.addEventListener("submit", function (event) {
+signupForm.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
@@ -123,62 +156,21 @@ signupForm.addEventListener("submit", function (event) {
     }
 
 
-    // Check if an account already exists
-    const existingUser =
-        JSON.parse(
-            localStorage.getItem("busiVibesUser")
-        );
-
-
-    if (
-        existingUser &&
-        existingUser.email === email
-    ) {
-
-        showMessage(
-            "An account with this email already exists. Please log in.",
-            "error"
-        );
-
-        return;
+    try {
+        const data = await requestAuth("/auth/signup", {
+            username: usernameFromEmail(email),
+            password,
+            type: accountType,
+            displayName: fullName
+        });
+        saveSession(data);
+        showMessage("Account created successfully!", "success");
+        setTimeout(() => {
+            window.location.href = accountType === "artist" ? "pages/artist-dashboard.html" : "fan-dashboard.html";
+        }, 500);
+    } catch (error) {
+        showMessage(error.message, "error");
     }
-
-
-    // Create user
-    const user = {
-
-        fullName: fullName,
-        email: email,
-        password: password,
-        accountType: accountType
-
-    };
-
-
-    // Save account
-    localStorage.setItem(
-        "busiVibesUser",
-        JSON.stringify(user)
-    );
-
-
-    // Clear form
-    signupForm.reset();
-
-
-    // Switch to login
-    setMode("login");
-
-
-    // Show success message
-    showMessage(
-        "Account created successfully! Please log in.",
-        "success"
-    );
-
-
-    // Automatically put email into login form
-    loginForm.email.value = email;
 
 });
 
@@ -187,7 +179,7 @@ signupForm.addEventListener("submit", function (event) {
 // LOGIN
 // ===============================
 
-loginForm.addEventListener("submit", function (event) {
+loginForm.addEventListener("submit", async function (event) {
 
     event.preventDefault();
 
@@ -211,91 +203,19 @@ loginForm.addEventListener("submit", function (event) {
     }
 
 
-    // Get saved user
-    const savedUser =
-        JSON.parse(
-            localStorage.getItem("busiVibesUser")
-        );
-
-
-    // No account
-    if (!savedUser) {
-
-        showMessage(
-            "No account found. Please sign up first.",
-            "error"
-        );
-
-        return;
+    try {
+        const data = await requestAuth("/auth/login", {
+            username: usernameFromEmail(email),
+            password
+        });
+        saveSession(data);
+        showMessage(`Welcome back, ${data.user.displayName}!`, "success");
+        loginForm.reset();
+        setTimeout(() => {
+            window.location.href = data.user.type === "artist" ? "pages/artist-dashboard.html" : "fan-dashboard.html";
+        }, 500);
+    } catch (error) {
+        showMessage(error.message, "error");
     }
-
-
-    // Check login details
-    if (
-        savedUser.email !== email ||
-        savedUser.password !== password
-    ) {
-
-        showMessage(
-            "Incorrect email or password.",
-            "error"
-        );
-
-        return;
-    }
-
-
-    // Login successful
-    localStorage.setItem(
-        "busiVibesLoggedIn",
-        "true"
-    );
-
-
-    localStorage.setItem(
-        "busiVibesCurrentUser",
-        JSON.stringify({
-            fullName: savedUser.fullName,
-            email: savedUser.email,
-            accountType: savedUser.accountType || "fan"
-        })
-    );
-
-
-    showMessage(
-        `Welcome back, ${savedUser.fullName}!`,
-        "success"
-    );
-
-
-    loginForm.reset();
-
-
-       // Redirect after successful login
-    setTimeout(() => {
-
-        const userType =
-            String(savedUser.accountType || "")
-                .trim()
-                .toLowerCase();
-
-
-        if (userType === "artist") {
-
-            window.location.href = "pages/artist-dashboard.html";
-
-        } 
-        else if (userType === "fan") {
-
-            window.location.href = "fan-dashboard.html";
-
-        } 
-        else {
-
-            window.location.href = "index.html";
-
-        }
-
-    }, 1200);
 
 });

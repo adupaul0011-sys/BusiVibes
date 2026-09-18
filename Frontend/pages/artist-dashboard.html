@@ -80,7 +80,7 @@
 
 <!-- MAIN CONTENT -->
 
-<main class="dashboard-main">
+<main class="dashboard-main artist-dashboard">
 
     <!-- TOP BAR -->
 
@@ -122,7 +122,7 @@
 
                 <p>Followers</p>
 
-                <h2>22K</h2>
+                <h2 id="followersCount">22K</h2>
 
             </div>
 
@@ -139,7 +139,7 @@
 
                 <p>Total Streams</p>
 
-                <h2>1.2M</h2>
+                <h2 id="streamsCount">1.2M</h2>
 
             </div>
 
@@ -156,7 +156,7 @@
 
                 <p>Downloads</p>
 
-                <h2>400K</h2>
+                <h2 id="downloadsCount">400K</h2>
 
             </div>
 
@@ -173,7 +173,7 @@
 
                 <p>Total Songs</p>
 
-                <h2>4</h2>
+                <h2 id="songsCount">4</h2>
 
             </div>
 
@@ -197,20 +197,19 @@
 
         <div class="quick-actions">
 
-            <button class="action-card">
+           <button class="action-card" id="uploadSongBtn">
 
-                <span>🎵</span>
+    <span>🎵</span>
 
-                <strong>
-                    Upload Song
-                </strong>
+    <strong>
+        Upload Song
+    </strong>
 
-                <small>
-                    Add new music
-                </small>
+    <small>
+        Add new music
+    </small>
 
-            </button>
-
+</button>
 
             <button class="action-card">
 
@@ -260,6 +259,92 @@
 
     </section>
 
+            </div>
+
+    </section>
+
+
+    <!-- UPLOAD SONG FORM -->
+
+    <section class="dashboard-section" id="uploadSongSection" style="display: none;">
+
+        <div class="section-header">
+
+            <h2>Upload New Song</h2>
+
+        </div>
+
+        <form id="uploadSongForm">
+
+            <div>
+                <label for="songTitle">Song Title</label>
+
+                <input
+                    type="text"
+                    id="songTitle"
+                    placeholder="Enter song title"
+                    required>
+            </div>
+
+
+            <div>
+                <label for="songGenre">Genre</label>
+
+                <input
+                    type="text"
+                    id="songGenre"
+                    placeholder="e.g. Afropop">
+            </div>
+
+
+            <div>
+                <label for="songCover">Song Cover</label>
+
+                <input
+                    type="file"
+                    id="songCover"
+                    accept="image/*">
+            </div>
+
+
+            <div>
+                <label for="songFile">Audio File</label>
+
+                <input
+                    type="file"
+                    id="songFile"
+                    accept="audio/*"
+                    required>
+            </div>
+
+
+            <div>
+                <label>
+                    <input
+                        type="checkbox"
+                        id="allowDownload"
+                        checked>
+                    Allow fans to download this song
+                </label>
+            </div>
+
+
+            <button type="submit">
+                Upload Song
+            </button>
+
+            <button
+                type="button"
+                id="cancelUploadBtn">
+                Cancel
+            </button>
+
+            <p id="uploadMessage"></p>
+
+        </form>
+
+    </section>
+
 
     <!-- RECENT SONGS -->
 
@@ -280,100 +365,18 @@
 
         <div class="music-table">
 
-            <div class="music-row music-heading">
+    <div class="music-row music-heading">
 
-                <span>Song</span>
-                <span>Streams</span>
-                <span>Downloads</span>
-                <span>Status</span>
+        <span>Song</span>
+        <span>Streams</span>
+        <span>Downloads</span>
+        <span>Status</span>
 
-            </div>
+    </div>
 
+    <div id="artistSongsList"></div>
 
-            <div class="music-row">
-
-                <span>
-                    🎵 Champion
-                </span>
-
-                <span>
-                    2.1M
-                </span>
-
-                <span>
-                    150K
-                </span>
-
-                <span class="status">
-                    Published
-                </span>
-
-            </div>
-
-
-            <div class="music-row">
-
-                <span>
-                    🎵 Rise Up
-                </span>
-
-                <span>
-                    1.4M
-                </span>
-
-                <span>
-                    120K
-                </span>
-
-                <span class="status">
-                    Published
-                </span>
-
-            </div>
-
-
-            <div class="music-row">
-
-                <span>
-                    🎵 Dream Big
-                </span>
-
-                <span>
-                    900K
-                </span>
-
-                <span>
-                    80K
-                </span>
-
-                <span class="status">
-                    Published
-                </span>
-
-            </div>
-
-
-            <div class="music-row">
-
-                <span>
-                    🎵 Forever
-                </span>
-
-                <span>
-                    500K
-                </span>
-
-                <span>
-                    50K
-                </span>
-
-                <span class="status">
-                    Published
-                </span>
-
-            </div>
-
-        </div>
+</div>
 
     </section>
 
@@ -381,8 +384,8 @@
 </main>
 
 
-<script src="../js/dashboard.js"></script>
-```
+<script src="../busivibes-data.js"></script>
+<script src="../js/dashboard.js?v=2"></script>
 
 </body>
 

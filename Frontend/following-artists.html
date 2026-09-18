@@ -51,7 +51,7 @@
                     📀 My Playlists
                 </a>
 
-                <a href="#" class="nav-link">
+                <a href="artists.html" class="nav-link">
                     🎤 Artists
                 </a>
 
@@ -155,16 +155,27 @@
     </div>
 
 
+    <script src="busivibes-data.js"></script>
+
     <script>
 
         // ========================================
         // CURRENT USER
         // ========================================
 
-        const currentUser =
-            JSON.parse(
+        let currentUser = null;
+
+        try {
+
+            currentUser = JSON.parse(
                 localStorage.getItem("busiVibesCurrentUser")
             );
+
+        } catch (error) {
+
+            currentUser = null;
+
+        }
 
         if (!currentUser) {
 
@@ -172,8 +183,16 @@
 
         } else {
 
-            document.getElementById("fanName").textContent =
-                currentUser.fullName;
+            const fanName = document.getElementById("fanName");
+
+            if (fanName) {
+
+                fanName.textContent =
+                    currentUser.fullName ||
+                    currentUser.name ||
+                    "Fan";
+
+            }
 
         }
 
@@ -182,32 +201,46 @@
         // ARTISTS
         // ========================================
 
-        const artists = [
-
+        const artists = (
+            window.BusiVibesData &&
+            window.BusiVibesData.artists
+        ) || [
             {
+                slug: "paul-beats",
                 name: "Paul Beats",
                 genre: "Afropop Artist",
                 image: "assets/images/paul-beats.png"
             },
-
             {
+                slug: "decartella",
                 name: "Decartella",
                 genre: "Vocalist",
                 image: "assets/images/artists2.jpg"
             },
-
             {
+                slug: "kofi-jamar",
                 name: "Kofi Jamar",
                 genre: "Afrobeats Artist",
                 image: "assets/images/artists3.jpg"
             },
-
             {
+                slug: "lyrical-kings",
+                name: "Lyrical Kings",
+                genre: "Group",
+                image: "assets/images/artists4.jpg"
+            },
+            {
+                slug: "amaarae",
                 name: "Amaarae",
                 genre: "Afropop Artist",
                 image: "assets/images/artists5.jpg"
+            },
+            {
+                slug: "black-tunez",
+                name: "Black Tunez",
+                genre: "Producer",
+                image: "assets/images/artists6.jpg"
             }
-
         ];
 
 
@@ -264,6 +297,12 @@
             container.innerHTML =
                 followedArtists.map(function(artist) {
 
+                    const artistSlug =
+                        artist.slug ||
+                        artist.name
+                            .toLowerCase()
+                            .replace(/\s+/g, "-");
+
                     return `
 
                         <div class="artist-card">
@@ -285,12 +324,23 @@
                                 ${artist.genre}
                             </p>
 
-                            <button
-                                class="follow-btn following"
-                                data-artist="${artist.name}"
-                            >
-                                ✓ Following
-                            </button>
+                            <div class="artist-card-actions">
+
+                                <button
+                                    class="follow-btn following"
+                                    data-artist="${artist.name}"
+                                >
+                                    ✓ Following
+                                </button>
+
+                                <button
+                                    class="view-artist-btn"
+                                    data-slug="${artistSlug}"
+                                >
+                                    View Artist
+                                </button>
+
+                            </div>
 
                         </div>
 
@@ -298,9 +348,8 @@
 
                 }).join("");
 
-
             // ========================================
-            // UNFOLLOW
+            // UNFOLLOW / VIEW ARTIST
             // ========================================
 
             const unfollowButtons =
@@ -325,6 +374,25 @@
 
             });
 
+
+            const viewArtistButtons =
+                document.querySelectorAll(".view-artist-btn");
+
+
+            viewArtistButtons.forEach(function(button) {
+
+                button.addEventListener("click", function() {
+
+                    const artistSlug =
+                        button.dataset.slug;
+
+                    window.location.href =
+                        "pages/artist-profile.html?artist=" +
+                        artistSlug;
+
+                });
+
+            });
         }
 
 
@@ -335,25 +403,29 @@
         const logoutButton =
             document.querySelector(".logout");
 
-        logoutButton.addEventListener(
-            "click",
-            function(event) {
+        if (logoutButton) {
 
-                event.preventDefault();
+            logoutButton.addEventListener(
+                "click",
+                function(event) {
 
-                localStorage.removeItem(
-                    "busiVibesLoggedIn"
-                );
+                    event.preventDefault();
 
-                localStorage.removeItem(
-                    "busiVibesCurrentUser"
-                );
+                    localStorage.removeItem(
+                        "busiVibesLoggedIn"
+                    );
 
-                window.location.href =
-                    "login.html";
+                    localStorage.removeItem(
+                        "busiVibesCurrentUser"
+                    );
 
-            }
-        );
+                    window.location.href =
+                        "login.html";
+
+                }
+            );
+
+        }
 
 
         // ========================================
